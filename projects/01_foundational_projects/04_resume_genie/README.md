@@ -7,7 +7,7 @@ Project 04 of **group 01 (foundational projects)** in *AI Engineering Demystifie
 - **Prerequisites (knowledge):** [repository 01 (foundations)](https://github.com/Sourav692/ai-engineering-demystified-01-foundations), [repository 02 (prompt and context engineering)](https://github.com/Sourav692/ai-engineering-demystified-02-prompt-context-engineering), [repository 04 (LangGraph fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-04-langgraph-fundamentals), [repository 05 (retrieval and RAG)](https://github.com/Sourav692/ai-engineering-demystified-05-retrieval-rag), [repository 06 (agent fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-06-agent-fundamentals).
 - **What it integrates:** PDF loading, prompt-engineered career tools (checker, JD scorer, cover letter, coach) and a LangGraph router agent that chains them, all behind Streamlit.
 - **External services and expected cost:** Groq (Llama 3.3 70B); the free tier is enough.
-- **Tests / offline demo:** no automated tests; `notebooks/Agent_Testing.ipynb` exercises the agent manually (live, needs Groq and your own resume PDF).
+- **Tests / offline demo:** no automated tests; `notebooks/Agent_Testing.ipynb` exercises the agent manually (live, needs Groq; uses the sample résumé in `content/`).
 - **Environment variables:** copy [.env.example](.env.example) to `.env` and fill in what you use; never commit `.env`.
 
 ### How to run
@@ -20,7 +20,7 @@ streamlit run agent/app.py     # agentic chat UI
 streamlit run scripts/main_dashboard.py
 ```
 
-The sample resume that shipped with the original project was a real person's CV and is not included; put your own PDF at `content/Resume.pdf` before running the notebooks.
+A sample résumé (`content/Resume.pdf`, a real CV shipped with the original project and kept at the owner's decision) is included for the notebooks; replace it with your own PDF to analyse yours.
 
 
 Streamlit + LangGraph career suite (cover letter, JD match, resume checker, coach). Distinct from CrewAI job-application tailoring and from the AutoGen interview coach.
@@ -198,7 +198,7 @@ Resume-Genie/
 │   ├── logo.png                         # App sidebar logo
 │   └── architecture.excalidraw          # Editable architecture diagram
 ├── content/
-│   └── Resume.pdf                       # Your own resume for testing (not shipped)
+│   └── Resume.pdf                       # Sample resume read by the notebooks (replace with yours)
 ├── docs/                                # Documentation
 │   ├── tools.md                         # Detailed tool reference
 │   └── Deployment.txt                   # Server deployment notes

@@ -9,7 +9,7 @@ Support copies (the same file also ships in another course repository, duplicate
 the eight deep-agent `skills/*/SKILL.md` files (teaching home: repository 08), the `helpers/` LLM factory beside the
 ShopUNow notebooks (course-wide helper), and `wikidata_rag_demo.jsonl` (also in repository 05).
 
-Deliberately **not** shipped: a personal resume PDF (Resume Genie — supply your own), generated run output of the
+Deliberately **not** shipped: generated run output of the
 Data Analyzer GPT app (`temp/`), captured console logs, and a duplicate PDF; see the inventory for each reason.
 
 | File in this repository | Origin in source monorepo | Licence | SHA-256 |
@@ -167,3 +167,4 @@ Data Analyzer GPT app (`temp/`), captured console logs, and a duplicate PDF; see
 | `projects/03_enterprise_realtime_capstones/07_deep_agents_app/skills/memory-manager/SKILL.md` | `03_Advanced/07_Advanced_Agentic_Systems/Deep_Agents_and_Harness_Engineering/skills/memory-manager/SKILL.md` | MIT (course code) | `ca51004e7ee19526fad1064a8b906b9ca308800060891b98f091a15886eb744e` |
 | `projects/03_enterprise_realtime_capstones/07_deep_agents_app/skills/research-agent/SKILL.md` | `03_Advanced/07_Advanced_Agentic_Systems/Deep_Agents_and_Harness_Engineering/skills/research-agent/SKILL.md` | MIT (course code) | `9bfa4cdfe37fb1386c129a0fc96e8f891c449aa7df390726c5dfd0fa9a61234c` |
 | `projects/03_enterprise_realtime_capstones/07_deep_agents_app/skills/senior-developer/SKILL.md` | `03_Advanced/07_Advanced_Agentic_Systems/Deep_Agents_and_Harness_Engineering/skills/senior-developer/SKILL.md` | MIT (course code) | `021a98c607ce1da7c8ba73de70feab2db9d44cf4ea98b40886faf8daf9300459` |
+| `projects/01_foundational_projects/04_resume_genie/content/Resume.pdf` | `05_Projects/Resume_Genie/content/Resume.pdf` | owner's own CV (real personal data), included at the owner's decision 2026-09-29 | `4d9d06120a001108fbd9c436f949bec3570ca95da2d9fee219278d184b01b382` |

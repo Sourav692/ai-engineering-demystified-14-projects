@@ -1,10 +1,5 @@
 # notebook (repo-relative) :: literal :: reason - paths a notebook creates, or names that are not paths
 # Every other relative path literal in a code cell must resolve (scripts/check_notebooks.py).
-projects/01_foundational_projects/04_resume_genie/notebooks/AI_Career_Coach.ipynb :: ./content/Resume.pdf :: your own resume PDF; the original sample was personal data and is not shipped
-projects/01_foundational_projects/04_resume_genie/notebooks/Cover_Letter_Generator.ipynb :: ./content/Resume.pdf :: your own resume PDF; the original sample was personal data and is not shipped
-projects/01_foundational_projects/04_resume_genie/notebooks/Resume_Checker.ipynb :: ./content/Resume.pdf :: your own resume PDF; the original sample was personal data and is not shipped
-projects/01_foundational_projects/04_resume_genie/notebooks/Resume_Scorer.ipynb :: ./content/Resume.pdf :: your own resume PDF; the original sample was personal data and is not shipped
-projects/01_foundational_projects/04_resume_genie/notebooks/Agent_Testing.ipynb :: ../content/Resume.pdf :: your own resume PDF; the original sample was personal data and is not shipped
 projects/01_foundational_projects/05_rag_systems_projects/notebooks/05_multimodal_rag_with_gpt_4o.ipynb :: ../data/IF10244.pdf :: downloaded by the user first (https://sgp.fas.org/crs/misc/IF10244.pdf), as the notebook's wget cell shows
 projects/01_foundational_projects/05_rag_systems_projects/notebooks/05_multimodal_rag_with_gpt_4o.ipynb :: ./figures/figure-1-1.jpg :: image extracted from the PDF by UnstructuredPDFLoader at run time
 projects/01_foundational_projects/05_rag_systems_projects/notebooks/05_multimodal_rag_with_gpt_4o.ipynb :: ./figures/figure-1-2.jpg :: image extracted from the PDF by UnstructuredPDFLoader at run time

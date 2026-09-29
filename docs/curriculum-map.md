@@ -34,7 +34,7 @@ runs the repository-wide structural checks. No tests were added during the migra
 ### 04 · [Resume Genie](../projects/01_foundational_projects/04_resume_genie/)
 
 - **Objective:** Build a Streamlit career suite whose LangGraph agent routes and chains resume tools.
-- **Tests / deterministic demo:** none — no automated tests; `notebooks/Agent_Testing.ipynb` exercises the agent manually (live, needs Groq and your own resume PDF).
+- **Tests / deterministic demo:** none — no automated tests; `notebooks/Agent_Testing.ipynb` exercises the agent manually (live, needs Groq; uses the sample résumé in `content/`).
 - **Notebooks:**
   - [`notebooks/AI_Career_Coach.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/AI_Career_Coach.ipynb) — 🎯 AI Career Coach
   - [`notebooks/Agent_Testing.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/Agent_Testing.ipynb) — 🧪 Resume Genie Agent — Testing Notebook

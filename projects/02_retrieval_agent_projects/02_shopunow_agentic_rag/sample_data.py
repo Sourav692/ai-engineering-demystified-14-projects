@@ -376,7 +376,7 @@ billing_payments_data = [
         "category": "Billing & Payments"
     },
     {
-        "doc": "Question: What EMI options are available on ShopUNow?\nAnswer: ShopUNow offers EMI on orders above INR 3,000. Options include: (1) No-Cost EMI on select products (3, 6, or 9 months) with participating bank credit cards, (2) Standard EMI (3-24 months) on all major bank credit cards with applicable interest, (3) partner NBFC EMI Card for cardless EMI, (4) ShopUNow Pay Later — buy now and pay in 3 interest-free installments. EMI options are displayed on the product page and at checkout.",
+        "doc": "Question: What EMI options are available on ShopUNow?\nAnswer: ShopUNow offers EMI on orders above INR 3,000. Options include: (1) No-Cost EMI on select products (3, 6, or 9 months) with participating bank credit cards, (2) Standard EMI (3-24 months) on all major bank credit cards with applicable interest, (3) Bajaj Finserv EMI Card for cardless EMI, (4) ShopUNow Pay Later — buy now and pay in 3 interest-free installments. EMI options are displayed on the product page and at checkout.",
         "category": "Billing & Payments"
     },
     {
