@@ -1,0 +1,24 @@
+# Activate once per clone:  uv run pre-commit install
+repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+        name: strip output from notebooks
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.13.2
+    hooks:
+      - id: ruff
+        args: [--fix]
+  - repo: local
+    hooks:
+      - id: check-notebooks
+        name: notebooks are valid, titled, clean, and their paths resolve
+        entry: python scripts/check_notebooks.py
+        language: system
+        pass_filenames: false
+      - id: check-links
+        name: links resolve and the repository is self-contained
+        entry: python scripts/check_links.py
+        language: system
+        pass_filenames: false

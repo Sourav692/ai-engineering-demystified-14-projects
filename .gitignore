@@ -1,0 +1,30 @@
+# Environments and secrets
+.venv/
+.env
+.env.*
+!.env.example
+
+# Python / tooling caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local runtime state notebooks may create (vector stores, checkpoints, outputs)
+chroma_db/
+.chroma/
+*.sqlite3-journal
+outputs/
+runs/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Chatbot</title>
+
+  <!-- Fonts: DM Sans (display) + IBM Plex Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__icon" aria-hidden="true">&#x1F3E5;</div>
+      <div class="header__info">
+        <h1>Medical Assistant</h1>
+        <p class="header__status">Online &mdash; Ask me anything</p>
+      </div>
+    </header>
+
+    <!-- Chat Messages -->
+    <main class="chat-area" id="chatArea" role="log" aria-live="polite">
+      <div class="welcome">
+        <span class="welcome__icon" aria-hidden="true">&#x1FA7A;</span>
+        <h2>How can I help you today?</h2>
+        <p>Ask me about symptoms, conditions, treatments, or any medical topic from our knowledge base.</p>
+      </div>
+    </main>
+
+    <!-- Typing Indicator -->
+    <div class="typing-indicator" id="typingIndicator" aria-label="Assistant is typing">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Input -->
+    <form class="input-area" id="messageForm" autocomplete="off">
+      <label for="msgInput" class="sr-only">Type your message</label>
+      <input
+        type="text"
+        id="msgInput"
+        name="msg"
+        class="input-area__field"
+        placeholder="Describe your symptoms or ask a question..."
+        required
+      >
+      <button type="submit" class="input-area__btn" aria-label="Send message">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <script>
+    const chatArea = document.getElementById('chatArea');
+    const form = document.getElementById('messageForm');
+    const input = document.getElementById('msgInput');
+    const typing = document.getElementById('typingIndicator');
+
+    function getTime() {
+      const d = new Date();
+      return d.getHours().toString().padStart(2, '0') + ':' +
+             d.getMinutes().toString().padStart(2, '0');
+    }
+
+    function appendMessage(text, sender) {
+      // Remove welcome message on first interaction
+      const welcome = chatArea.querySelector('.welcome');
+      if (welcome) welcome.remove();
+
+      const row = document.createElement('div');
+      row.className = 'msg-row msg-row--' + sender;
+
+      const avatar = document.createElement('div');
+      avatar.className = 'msg-avatar';
+      avatar.setAttribute('aria-hidden', 'true');
+      avatar.textContent = sender === 'bot' ? '\u{1F3E5}' : '\u{1F464}';
+
+      const content = document.createElement('div');
+
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      bubble.textContent = text;
+
+      const time = document.createElement('span');
+      time.className = 'msg-time';
+      time.textContent = getTime();
+
+      content.appendChild(bubble);
+      content.appendChild(time);
+      row.appendChild(avatar);
+      row.appendChild(content);
+      chatArea.appendChild(row);
+
+      chatArea.scrollTop = chatArea.scrollHeight;
+    }
+
+    function showTyping(visible) {
+      typing.classList.toggle('visible', visible);
+      if (visible) chatArea.scrollTop = chatArea.scrollHeight;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+
+      appendMessage(text, 'user');
+      input.value = '';
+      showTyping(true);
+
+      fetch('/get', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'msg=' + encodeURIComponent(text)
+      })
+      .then(function(res) { return res.text(); })
+      .then(function(data) {
+        showTyping(false);
+        appendMessage(data, 'bot');
+      })
+      .catch(function() {
+        showTyping(false);
+        appendMessage('Sorry, something went wrong. Please try again.', 'bot');
+      });
+    });
+  </script>
+
+</body>
+</html>

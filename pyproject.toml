@@ -1,0 +1,30 @@
+[project]
+name = "ai-engineering-demystified-14-projects"
+version = "0.1.0"
+description = "Projects: 24 independent AI engineering applications and capstones in three ordered groups, each with its own environment."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12,<3.13"
+# The root environment runs the repository checks only. Each project under projects/ has its
+# own dependencies (manifest, lockfile or README instructions) and is installed in its own folder.
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.13", "pre-commit>=4.0", "nbstripout>=0.8", "jupyterlab>=4.2", "ipykernel>=6.29"]
+
+[tool.uv]
+default-groups = ["dev"]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+# projects/ holds independent applications - their Python, JS/TS front ends (React, Angular, Vite)
+# and their own ruff/pyproject settings are kept as found and are not restyled from the root.
+extend-exclude = ["*.ipynb", "projects"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
