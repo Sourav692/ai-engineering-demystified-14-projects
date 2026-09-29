@@ -110,7 +110,7 @@ This repository integrates; it does not introduce concepts. First instruction li
 - Retrieval and standard RAG → [repository 05 (retrieval and RAG)](https://github.com/Sourav692/ai-engineering-demystified-05-retrieval-rag); agentic, corrective and adaptive RAG → [repository 09 (advanced RAG)](https://github.com/Sourav692/ai-engineering-demystified-09-advanced-rag).
 - Agent loops and tools → [repository 06 (agent fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-06-agent-fundamentals); provider agent SDKs → [repository 07 (first-party agent SDKs)](https://github.com/Sourav692/ai-engineering-demystified-07-first-party-agent-sdks); memory, multi-agent and deep agents → [repository 08 (advanced agent systems)](https://github.com/Sourav692/ai-engineering-demystified-08-advanced-agent-systems).
 - MCP, A2A, ACP → [repository 10 (agent protocols)](https://github.com/Sourav692/ai-engineering-demystified-10-agent-protocols); CrewAI, AutoGen, DSPy, PydanticAI → [repository 11 (alternative agent frameworks)](https://github.com/Sourav692/ai-engineering-demystified-11-alternative-agent-frameworks).
-- AI coding tools → repository 12 (AI coding tools, not yet published).
+- AI coding tools → [repository 12 (AI coding tools)](https://github.com/Sourav692/ai-engineering-demystified-12-ai-coding-tools).
 - Tracing, cost, caching, safety and deployment as topics → [repository 13 (production and observability)](https://github.com/Sourav692/ai-engineering-demystified-13-production-observability).
 - Agent and RAG evaluation curricula live in the separate `Agent_Evaluation_Demystified` repository.
 
