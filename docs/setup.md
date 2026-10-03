@@ -44,9 +44,9 @@ The other projects keep the manifests they shipped with:
 | 02·11 | [AutoGen Data Analyzer GPT](../projects/02_retrieval_agent_projects/11_autogen_data_analyzer_gpt/) | none — dependencies listed above |
 | 02·12 | [AutoGen Notion MCP Agent](../projects/02_retrieval_agent_projects/12_autogen_notion_mcp_agent/) | none — dependencies listed above |
 | 03·01 | [Enterprise RAG Platform (Meridian Assist)](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/) | pyproject.toml, uv.lock, requirements.txt (exported), pytest.ini |
-| 03·02 | [Enterprise Agentic Workflow Automation Platform](../projects/03_enterprise_realtime_capstones/02_enterprise_agentic_workflow_platform/) | pyproject.toml, uv.lock, requirements.txt (exported) — standard library plus dev tools |
+| 03·02 | [Enterprise Agentic Workflow Automation Platform](../projects/03_enterprise_realtime_capstones/02_enterprise_agentic_workflow_platform/) | pyproject.toml, uv.lock, requirements.txt (exported) — standard library plus python-dotenv (notebook setup) and dev tools |
 | 03·03 | [Enterprise Multi-Agent AI Research Platform](../projects/03_enterprise_realtime_capstones/03_enterprise_multi_agent_research_platform/) | CODE/requirements.txt, CODE/pyrit_dashboard/requirements.txt, Dockerfiles, Terraform |
-| 03·04 | [FDE Delivery Framework](../projects/03_enterprise_realtime_capstones/04_fde_delivery_framework/) | pyproject.toml, uv.lock, requirements.txt (exported) — standard library plus dev tools |
+| 03·04 | [FDE Delivery Framework](../projects/03_enterprise_realtime_capstones/04_fde_delivery_framework/) | pyproject.toml, uv.lock, requirements.txt (exported) — standard library plus python-dotenv (notebook setup) and dev tools |
 | 03·05 | [Realtime Voice AI Agent with RAG](../projects/03_enterprise_realtime_capstones/05_realtime_voice_ai_agent_with_rag/) | backend/pyproject.toml + uv.lock, frontend/package.json (+ lock), docker-compose.yml |
 | 03·06 | [Pipecat Quickstart](../projects/03_enterprise_realtime_capstones/06_pipecat_quickstart/) | pyproject.toml, Dockerfile, pcc-deploy.toml |
 | 03·07 | [Deep Agents App — Memory Command Center](../projects/03_enterprise_realtime_capstones/07_deep_agents_app/) | requirements.txt, frontend/package.json (+ lock), Dockerfile, docker-compose.yaml, app.yaml |

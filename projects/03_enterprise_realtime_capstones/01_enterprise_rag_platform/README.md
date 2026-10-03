@@ -60,7 +60,7 @@ Getting that right — **provably**, not by prompting the model nicely — is wh
 ## Quick start
 
 ```bash
-# 1. OPENAI_API_KEY must be in the repo-root .env (it already is)
+# 1. OPENAI_API_KEY must be in this project's .env (cp .env.example .env)
 # 2. Build the index (~$0.0001, a few seconds)
 uv run python scripts/ingest.py
 

@@ -24,7 +24,7 @@ uv run jupyter lab notebooks/
 A deterministic guardrail-and-orchestration engine for the problem named in DevRev's system design
 prep guide as Problem Type A: **"design an AI agent platform for non-technical users to configure
 workflow automations across multiple channels."** Third project in the series, same discipline as
-`enterprise_rag_platform` and `delivery_framework_platform` — a real, runnable system that proves
+`01_enterprise_rag_platform` and `04_fde_delivery_framework` — a real, runnable system that proves
 the properties it claims.
 
 No LLM anywhere in this project — the "agent reasoning loop" is a fixed, deterministic step

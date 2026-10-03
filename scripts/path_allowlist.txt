@@ -6,7 +6,6 @@ projects/01_foundational_projects/05_rag_systems_projects/notebooks/05_multimoda
 projects/01_foundational_projects/05_rag_systems_projects/notebooks/05_multimodal_rag_with_gpt_4o.ipynb :: ./figures/figure-1-3.jpg :: image extracted from the PDF by UnstructuredPDFLoader at run time
 projects/02_retrieval_agent_projects/02_shopunow_agentic_rag/02_agentic_rag_system.ipynb :: memory.db :: SQLite checkpoint database the SqliteSaver creates at run time
 projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on.ipynb :: PM-2026-03-14.md :: a corpus document id (data/corpus/PM-2026-03-14.md) matched against loaded chunks, not a path
-projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part01-corpus-and-permissions.ipynb :: PM-2026-03-14.md :: a corpus document id (data/corpus/PM-2026-03-14.md) matched against loaded chunks, not a path
 projects/03_enterprise_realtime_capstones/04_fde_delivery_framework/notebooks/02-hands-on.ipynb :: case_study.json :: an engagement artifact name recorded by the gate engine, not a file the notebook reads
 projects/03_enterprise_realtime_capstones/04_fde_delivery_framework/notebooks/02-hands-on.ipynb :: golden_set_v1.json :: an engagement artifact name recorded by the gate engine, not a file the notebook reads
 projects/03_enterprise_realtime_capstones/04_fde_delivery_framework/notebooks/02-hands-on.ipynb :: eval_baseline_report.pdf :: an engagement artifact name recorded by the gate engine, not a file the notebook reads

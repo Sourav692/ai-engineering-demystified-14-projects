@@ -1,7 +1,7 @@
 # Source Modules Reference — `src/delivery_framework`
 
 **What this is:** every module and function in the package, 2-3 lines each — same purpose as
-`enterprise_rag_platform/docs/05-src-modules-reference.md`.
+`01_enterprise_rag_platform/docs/05-src-modules-reference.md`.
 
 **Overview:** the package has no LLM calls anywhere — every gate decision is deterministic, so the
 whole test suite runs in well under a second. `models.py` defines the domain; `identity.py` and
@@ -105,6 +105,5 @@ counterpart to `observability/trace.py::RunTrace`.
 
 ## See also
 
-- `01-theory.md` — the concepts
-- `02-architecture-end-to-end.md` — the pipeline, diagrammed
-- `04-system-design-coverage-map.md` — checked against the prep doc
+- `../README.md` — the project overview, gates and what the demo deliberately does not do
+- `../notebooks/02-hands-on.ipynb` — builds and runs the whole pipeline, step by step

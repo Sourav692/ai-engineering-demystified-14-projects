@@ -23,7 +23,7 @@ uv run jupyter lab notebooks/
 
 A gate-enforcing state machine for the delivery framework named in DevRev's system design prep guide
 as Problem Type C: **"design a delivery framework that takes a customer from scoping doc to deployed
-AI agent in under 2 weeks."** Built the same way `enterprise_rag_platform` was built for Problem Type
+AI agent in under 2 weeks."** Built the same way `01_enterprise_rag_platform` was built for Problem Type
 B — a real, runnable system that proves the properties it claims, not a slide describing them.
 
 No LLM anywhere in this project — every gate decision is deterministic.
@@ -73,12 +73,8 @@ uv run pytest -q        # 17 tests, deterministic, no API calls, well under a se
 
 | File                                                | What it is                                                                                                                                                   |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`docs/01-theory.md`**                     | The concepts, and why the shape deliberately mirrors`enterprise_rag_platform`. Read first.                                                                 |
-| **`docs/02-architecture-end-to-end.md`**    | The pipeline, diagrammed end to end, plain-English boxes.                                                                                                    |
 | **`docs/03-src-modules-reference.md`**      | Every function in`src/delivery_framework`, 2-3 lines each.                                                                                                 |
-| **`docs/04-system-design-coverage-map.md`** | Every pointer from the prep doc's §5 (and relevant §7/§9), checked against what's actually built — with a "what would it take to close this gap" column. |
 | **`notebooks/02-hands-on.ipynb`**           | Builds and runs the whole pipeline, step by step.                                                                                                            |
-| **`INTERVIEW_SCRIPT.md`**                   | How to present this on a whiteboard in 60 minutes (the 6-step framework).                                                                                    |
 
 ---
 
@@ -137,10 +133,10 @@ guardrail policy custom-built).
 ## Layout
 
 ```
-delivery_framework_platform/
+04_fde_delivery_framework/
 ├── data/
 │   └── case_study.json          Northwind Logistics scenario
-├── docs/                        01-theory, 02-architecture, 03-src-reference, 04-coverage-map
+├── docs/                        03-src-modules-reference.md
 ├── notebooks/02-hands-on.ipynb
 ├── scripts/                     run_engagement_demo.py, demo_gate_failure.py
 ├── src/delivery_framework/
@@ -152,8 +148,7 @@ delivery_framework_platform/
 │   ├── accelerators.py            the reusable asset library
 │   ├── metrics.py                 the 5 tracked metrics
 │   └── observability.py           event-log rendering + persistence
-├── tests/test_gates.py           17 tests
-└── INTERVIEW_SCRIPT.md
+└── tests/test_gates.py           17 tests
 ```
 
 ---
@@ -183,9 +178,8 @@ open_escalations              1          (the day-3 auto-escalation, resolved by
 proven is that the *pipeline enforces its own gates*, not that these particular numbers are typical.
 `golden_set_harness` is pulled from the accelerator library as a *named asset*; nothing in this repo
 actually runs a real eval harness against it. The real one — recall@k, MRR, groundedness, a zero-leak
-security gate — already exists one project over, in `enterprise_rag_platform`. Wiring the Evaluate
-stage to genuinely call it is on the punch list in `docs/04-system-design-coverage-map.md`, not done
-here.
+security gate — already exists one project over, in `01_enterprise_rag_platform`. Wiring the Evaluate
+stage to genuinely call it is not done here.
 
 ---
 
@@ -198,8 +192,7 @@ Named because an architect should know where the demo ends:
   customer environment.
 - **The eval harness is referenced, not run.** `eval_baseline_met`'s evidence is an asserted string
   in the demo script, not a computed score.
-- **One engagement at a time.** No portfolio view, no per-person capacity model — see
-  `docs/04-system-design-coverage-map.md`'s scale-gap section.
+- **One engagement at a time.** No portfolio view, no per-person capacity model.
 - **No change-control mechanism yet.** Scope creep is named as a risk in the prep doc; there's no
   `request_scope_change()` gate in this codebase, though it would reuse `gates.py::sign_off()`'s
   exact pattern.

@@ -3,10 +3,12 @@ name = "enterprise-agentic-workflow-platform"
 version = "0.1.0"
 description = "Agent Platform: governed, multi-tenant agentic workflow automation for non-technical users."
 requires-python = ">=3.12,<3.13"
-# src/agent_platform and the notebook use only the standard library.
+# src/agent_platform uses only the standard library; the notebook adds python-dotenv for its setup cell.
 dependencies = [
     # shared course helpers (get_llm / get_openai_llm), pinned release tag
     "aied-helpers",
+    # .env loading in the notebook setup cell
+    "python-dotenv>=1.2.4",
 ]
 
 [tool.uv]

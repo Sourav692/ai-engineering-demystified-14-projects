@@ -52,7 +52,7 @@ ready-to-speak answer.
 
 | Pointer | Status | Where | To close this gap |
 |---|---|---|---|
-| Templates, not a blank canvas | ❌ | No template library or clone-and-edit mechanism exists | **Code — low.** A small library of pre-built `WorkflowSpec`s (parallel to `delivery_framework_platform`'s accelerator library) that a new workflow starts from via a `clone()` function, tracked the same way accelerator reuse is tracked there. |
+| Templates, not a blank canvas | ❌ | No template library or clone-and-edit mechanism exists | **Code — low.** A small library of pre-built `WorkflowSpec`s (parallel to `04_fde_delivery_framework`'s accelerator library) that a new workflow starts from via a `clone()` function, tracked the same way accelerator reuse is tracked there. |
 | Natural-language authoring compiling to a reviewable spec | ❌ | Not built — needs a real LLM | **Verbal, mostly**, one tractable code slice. | *"This needs a genuine LLM call — generate a candidate `WorkflowSpec` from a natural-language description, then show the user the generated spec for confirmation before it's ever published. The 'confirmation before publish' half is nearly free to add on top of what exists — `workflows.py::promote()` already gates every status change behind a human decision, so an NL-generated spec would just enter at `DRAFT` and go through the exact same gate as a hand-written one. The generation half is the real LLM-integration work, deliberately not built here, the same choice the other two projects made about not calling a real model where determinism mattered more for testing."* |
 | Dry-run/simulation mode, all writes mocked | ✅ | `SHADOW` status | — |
 | Plain-language run history | ❌ | The trace is structured (`observability.py::render_run()`), not natural language | **Code — low.** A template or small LLM call that turns `render_run()`'s structured events into a sentence-per-step summary — genuinely low effort since all the underlying data is already captured faithfully. |
@@ -68,7 +68,7 @@ ready-to-speak answer.
 | Two workflows conflict on the same event | ✅ Directly demoed | `routing.py` — priority + entity lock | — |
 | Safely adding a custom tool | 🟡 | Schema validation (`tools.py::validate_args()`) and scoping (`ToolDefinition.scopes`) exist | **Code — moderate.** Sandboxed execution and a review-before-publish workflow for a *new* tool definition don't exist — the closest existing pattern to reuse is `workflows.py::promote()`'s role-gated staged approval, applied to tools instead of workflows. |
 | Versioning a live workflow | ✅ | `WorkflowStore` keeps every version; a `Run` pins to the version it started on | — |
-| ...with gradual migration | ❌ | No traffic-split mechanism between two versions of the same workflow | **Code — moderate.** A `traffic_split: Dict[int, float]` (version → percentage) on `WorkflowSpec`, consulted by `routing.py::selected_workflow()` to choose which version's steps to run — the same shape as `delivery_framework_platform`'s documented-but-unbuilt canary-rollout gap. |
+| ...with gradual migration | ❌ | No traffic-split mechanism between two versions of the same workflow | **Code — moderate.** A `traffic_split: Dict[int, float]` (version → percentage) on `WorkflowSpec`, consulted by `routing.py::selected_workflow()` to choose which version's steps to run — the same shape as `04_fde_delivery_framework`'s documented-but-unbuilt canary-rollout gap. |
 
 ---
 
@@ -121,5 +121,5 @@ can't prove.
 - `02-architecture-end-to-end.md` — the pipeline, diagrammed end to end
 - `03-src-modules-reference.md` — every function in `src/agent_platform`
 - `../INTERVIEW_SCRIPT.md` — the whiteboard script
-- `../../enterprise_rag_platform/docs/07-system-design-coverage-map.md` — the equivalent map for Problem Type B
-- `../../delivery_framework_platform/docs/04-system-design-coverage-map.md` — the equivalent map for Problem Type C
+- `../../01_enterprise_rag_platform/docs/07-system-design-coverage-map.md` — the equivalent map for Problem Type B
+- `../../04_fde_delivery_framework/README.md` — the delivery framework for Problem Type C (its README lists the pointers it covers)
