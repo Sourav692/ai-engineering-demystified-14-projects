@@ -38,6 +38,8 @@ package = false
 
 [dependency-groups]
 dev = [
+  "ipykernel>=7.4.0",
+  "jupyterlab>=4.6.4",
   "playwright>=1.58.0",
   "pytest",
 ]

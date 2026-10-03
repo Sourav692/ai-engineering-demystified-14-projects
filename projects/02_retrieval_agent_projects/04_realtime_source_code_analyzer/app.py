@@ -1,12 +1,12 @@
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from src.helper import load_embedding
 from dotenv import load_dotenv
 import os
 from src.helper import repo_ingestion
 from flask import Flask, render_template, jsonify, request
-from langchain.chat_models import ChatOpenAI
-from langchain.memory import ConversationSummaryMemory
-from langchain.chains import ConversationalRetrievalChain
+from langchain_openai import ChatOpenAI
+from langchain_classic.memory import ConversationSummaryMemory
+from langchain_classic.chains import ConversationalRetrievalChain
 
 
 app = Flask(__name__)

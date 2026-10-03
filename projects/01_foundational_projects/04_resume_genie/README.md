@@ -13,11 +13,10 @@ Project 04 of **group 01 (foundational projects)** in *AI Engineering Demystifie
 ### How to run
 
 ```bash
-uv venv --python 3.12 && source .venv/bin/activate
-uv pip install -e ".[dev]"    # or: pip install -r requirements.txt
+uv sync                        # creates .venv from pyproject.toml + uv.lock (includes Jupyter)
 cp .env.example .env           # add GROQ_API_KEY
-streamlit run agent/app.py     # agentic chat UI
-streamlit run scripts/main_dashboard.py
+uv run streamlit run agent/app.py     # agentic chat UI
+uv run streamlit run scripts/main_dashboard.py
 ```
 
 A sample résumé (`content/Resume.pdf`, a real CV shipped with the original project and kept at the owner's decision) is included for the notebooks; replace it with your own PDF to analyse yours.
@@ -96,6 +95,7 @@ Streamlit + LangGraph career suite (cover letter, JD match, resume checker, coac
 ### Prerequisites
 
 - Python 3.12+
+- [uv](https://docs.astral.sh/uv/)
 - A free [Groq API key](https://console.groq.com/)
 
 ### Setup
@@ -105,21 +105,9 @@ Streamlit + LangGraph career suite (cover letter, JD match, resume checker, coac
 git clone https://github.com/Sourav692/Resume-Genie.git
 cd Resume-Genie
 
-# Virtual environment (using uv — recommended)
-uv venv --python 3.12
-source .venv/bin/activate
-uv pip install -e ".[dev]"
+# Environment: creates .venv from pyproject.toml + uv.lock (includes Jupyter)
+uv sync
 ```
-
-<details>
-<summary>Alternative: using pip</summary>
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-</details>
 
 ### Configure
 
@@ -133,10 +121,10 @@ GROQ_API_KEY=your-groq-api-key-here
 
 ```bash
 # Agentic chat interface (recommended)
-streamlit run agent/app.py
+uv run streamlit run agent/app.py
 
 # Classic dashboard (manual tool selection)
-streamlit run scripts/main_dashboard.py
+uv run streamlit run scripts/main_dashboard.py
 ```
 
 Opens at `http://localhost:8501`.
@@ -145,10 +133,10 @@ Opens at `http://localhost:8501`.
 <summary>Run individual tools standalone</summary>
 
 ```bash
-streamlit run scripts/cover_letter_generator.py
-streamlit run scripts/resume_scorer.py
-streamlit run scripts/resume_checker.py
-streamlit run scripts/ai_career_coach.py
+uv run streamlit run scripts/cover_letter_generator.py
+uv run streamlit run scripts/resume_scorer.py
+uv run streamlit run scripts/resume_checker.py
+uv run streamlit run scripts/ai_career_coach.py
 ```
 </details>
 

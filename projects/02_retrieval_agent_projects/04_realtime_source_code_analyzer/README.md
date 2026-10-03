@@ -13,9 +13,9 @@ Project 04 of **group 02 (retrieval and agent projects)** in *AI Engineering Dem
 ### How to run
 
 ```bash
-pip install -r requirements.txt
+uv sync
 cp .env.example .env    # add OPENAI_API_KEY
-python app.py
+uv run python app.py
 ```
 
 
@@ -28,20 +28,10 @@ Clone the repository
 ```bash
 Project repo: https://github.com/
 ```
-### STEP 01- Create a conda environment after opening the repository
+### STEP 01- Create the environment and install the requirements (from this project's folder)
 
 ```bash
-conda create -n llmapp python=3.10 -y
-```
-
-```bash
-conda activate llmapp
-```
-
-
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 
@@ -54,7 +44,7 @@ OPENAI_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 ```bash
 # Finally run the following command
-python app.py
+uv run python app.py
 ```
 
 Now,

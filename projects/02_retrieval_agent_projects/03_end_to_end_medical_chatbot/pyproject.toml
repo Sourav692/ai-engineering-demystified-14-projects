@@ -7,14 +7,21 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "langchain==0.3.26",
-    "flask==3.1.1",
-    "sentence-transformers==4.1.0",
-    "pypdf==5.6.1",
-    "python-dotenv==1.1.0",
-    "langchain-pinecone==0.2.8",
-    "langchain-groq==0.3.2",
-    "langchain-community==0.3.26",
+    "langchain>=1.0",
+    "flask>=3.1.1",
+    "sentence-transformers>=4.1.0",
+    "pypdf>=5.6.1",
+    "python-dotenv>=1.1.0",
+    "langchain-pinecone>=0.2.8",
+    "langchain-groq>=1.0",
+    "langchain-community>=0.4",
+    "langchain-core>=1.0",
+    "langchain-classic>=1.0",
+    "langchain-text-splitters>=1.0",
+    "langchain-openai>=1.0",
+    "pinecone>=7.0",
+    # shared course helpers (get_llm / get_openai_llm), pinned release tag
+    "aied-helpers",
 ]
 
 [project.optional-dependencies]
@@ -30,3 +37,12 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 exclude = [".venv*", "research*"]
+
+[tool.uv.sources]
+aied-helpers = { git = "https://github.com/Sourav692/ai-engineering-demystified-shared.git", rev = "v0.1.0" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "jupyterlab>=4.5.6",
+]

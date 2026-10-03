@@ -1,0 +1,23 @@
+[project]
+name = "fde-delivery-framework"
+version = "0.1.0"
+description = "Delivery Framework: a gated FDE engagement pipeline from scoping doc to deployed agent."
+requires-python = ">=3.12,<3.13"
+# src/delivery_framework and the notebook use only the standard library.
+dependencies = [
+    # shared course helpers (get_llm / get_openai_llm), pinned release tag
+    "aied-helpers",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+aied-helpers = { git = "https://github.com/Sourav692/ai-engineering-demystified-shared.git", rev = "v0.1.0" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.4",
+    "pytest>=9.1.1",
+]

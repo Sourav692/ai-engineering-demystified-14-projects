@@ -13,15 +13,16 @@ Project 01 of **group 03 (enterprise and realtime capstones)** in *AI Engineerin
 ### How to run
 
 ```bash
-pip install langgraph chromadb openai python-dotenv rank-bm25 requests pytest
+uv sync                                          # creates .venv from pyproject.toml / uv.lock
 cp .env.example .env
-python scripts/ingest.py
-python scripts/ask.py --list-users
-python scripts/demo_access_control.py --matrix   # policy only, no LLM cost
-python -m pytest -m "not llm and not index"     # offline subset
+uv run python scripts/ingest.py
+uv run python scripts/ask.py --list-users
+uv run python scripts/demo_access_control.py --matrix   # policy only, no LLM cost
+uv run pytest -m "not llm and not index"               # offline subset
+uv run jupyter lab notebooks/
 ```
 
-The package list is what the code imports (the project has no manifest; `sentence-transformers` and `databricks-sdk` are only for optional paths). The config walks up from `src/` to the nearest `.env`, so a `.env` in this folder is found first.
+`pyproject.toml` declares what the code imports, including `databricks-sdk` for notebook 04. `sentence-transformers` (the optional `CrossEncoderReranker`) is not installed; add it with `uv add sentence-transformers` if you use that path. The config walks up from `src/` to the nearest `.env`, so a `.env` in this folder is found first.
 
 
 An enterprise RAG platform built around the problem that actually makes enterprise RAG hard: **not
@@ -61,31 +62,31 @@ Getting that right — **provably**, not by prompting the model nicely — is wh
 ```bash
 # 1. OPENAI_API_KEY must be in the repo-root .env (it already is)
 # 2. Build the index (~$0.0001, a few seconds)
-python scripts/ingest.py
+uv run python scripts/ingest.py
 
 # 3. Ask something
-python scripts/ask.py --user u_marco_t3 "Why did EU ingest degrade on 14 March?"
-python scripts/ask.py --list-users
+uv run python scripts/ask.py --user u_marco_t3 "Why did EU ingest degrade on 14 March?"
+uv run python scripts/ask.py --list-users
 
 # 4. The access-control demo — the one to run in front of an interviewer
-python scripts/demo_access_control.py --matrix    # policy only, no LLM cost
-python scripts/demo_access_control.py             # full demo
+uv run python scripts/demo_access_control.py --matrix    # policy only, no LLM cost
+uv run python scripts/demo_access_control.py             # full demo
 
 # 5. Evaluation
-python scripts/evaluate.py --kinds security       # the release gate
-python scripts/evaluate.py                        # the full golden set
-python scripts/evaluate.py --compare dense bm25 hybrid multi_query hyde enterprise
-python scripts/calibrate_judge.py                 # LLM-judge vs. hand-labeled cases
+uv run python scripts/evaluate.py --kinds security       # the release gate
+uv run python scripts/evaluate.py                        # the full golden set
+uv run python scripts/evaluate.py --compare dense bm25 hybrid multi_query hyde enterprise
+uv run python scripts/calibrate_judge.py                 # LLM-judge vs. hand-labeled cases
 
 # 5b. The moderate-effort additions from docs/07's punch list
-python scripts/demo_second_connector.py           # a JSON connector into its own tenant
-python scripts/demo_incremental_sync.py           # content-hash sync skips unchanged docs
-python scripts/demo_acl_catalog_update.py         # live ACL change, no reindex
+uv run python scripts/demo_second_connector.py           # a JSON connector into its own tenant
+uv run python scripts/demo_incremental_sync.py           # content-hash sync skips unchanged docs
+uv run python scripts/demo_acl_catalog_update.py         # live ACL change, no reindex
 
 # 6. Tests
-python -m pytest -m "not llm"    # 62 fast tests, no API calls
-python -m pytest                 # + 6 live integration tests
-python tests/verify_security_reference.py   # asserts docs/04 matches the running policy
+uv run pytest -m "not llm"       # 62 fast tests, no API calls
+uv run pytest                    # + 6 live integration tests
+uv run python tests/verify_security_reference.py   # asserts docs/04 matches the running policy
 ```
 
 ---

@@ -1,0 +1,30 @@
+[project]
+name = "agent-tool-calling-foundations"
+version = "0.1.0"
+description = "A ReAct tool-calling agent built two ways: from scratch and with LangGraph."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # Core: the agent framework (the from-scratch agent needs none of these)
+    "langgraph>=1.0",
+    "langchain-core>=1.0",
+    # notebooks/langgraph_react_agent.ipynb (ChatOpenAI) and src/brain.py make_llm_brain
+    "langchain>=1.0",
+    "langchain-openai>=1.0",
+    # notebooks/langgraph_react_agent.py, the Claude variant of the same demo
+    "langchain-anthropic>=1.0",
+    # notebooks/agent_tool_calling_demo_openai.ipynb: single-notebook, real-LLM demo
+    "openai>=1.0",
+    # only for app.get_graph().draw_ascii()
+    "grandalf>=0.8",
+    # shared course helpers (get_llm / get_openai_llm), pinned release tag
+    "aied-helpers",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0", "ipykernel>=6.29", "jupyterlab>=4.2"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+aied-helpers = { git = "https://github.com/Sourav692/ai-engineering-demystified-shared.git", rev = "v0.1.0" }

@@ -13,9 +13,11 @@ Project 02 of **group 03 (enterprise and realtime capstones)** in *AI Engineerin
 ### How to run
 
 ```bash
-python scripts/run_workflow_demo.py
-python scripts/demo_guardrail_failure.py
-pip install pytest && python -m pytest -q
+uv sync                                  # creates .venv from pyproject.toml / uv.lock
+uv run python scripts/run_workflow_demo.py
+uv run python scripts/demo_guardrail_failure.py
+uv run pytest -q
+uv run jupyter lab notebooks/
 ```
 
 
@@ -57,13 +59,13 @@ configure one *safely*. This project turns "safely" into checkable properties in
 
 ```bash
 # 1. The happy path - staged rollout, routing conflict, approval, idempotent retry, crash + resume
-python scripts/run_workflow_demo.py
+uv run python scripts/run_workflow_demo.py
 
 # 2. The negative-control demo - the one to run in front of an interviewer
-python scripts/demo_guardrail_failure.py
+uv run python scripts/demo_guardrail_failure.py
 
 # 3. Tests
-python -m pytest -q     # 21 tests, deterministic, no API calls, well under a second
+uv run pytest -q        # 21 tests, deterministic, no API calls, well under a second
 ```
 
 ---

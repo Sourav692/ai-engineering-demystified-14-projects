@@ -1,10 +1,10 @@
 import os
 from git import Repo
-from langchain.document_loaders.generic import GenericLoader
-from langchain.document_loaders.parsers import LanguageParser
-from langchain.text_splitter import Language
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings 
+from langchain_community.document_loaders.generic import GenericLoader
+from langchain_community.document_loaders.parsers import LanguageParser
+from langchain_text_splitters import Language
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings 
 
 
 #clone any github repositories 

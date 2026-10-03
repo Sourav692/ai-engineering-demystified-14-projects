@@ -1,0 +1,43 @@
+[project]
+name = "rag-systems-projects"
+version = "0.1.0"
+description = "Five applied RAG builds with LangChain, from a retrieval-only search engine to multimodal RAG."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # Core: LangChain 1.x (chains, retrievers and loaders used by every notebook)
+    "langchain>=1.0",
+    "langchain-core>=1.0",
+    # 0.x-era chains/retrievers (create_retrieval_chain, MultiQueryRetriever, MultiVectorRetriever, ...)
+    "langchain-classic>=1.0",
+    "langchain-community>=0.4",
+    "langchain-text-splitters>=1.0",
+    # OpenAI embeddings + chat models, Chroma vector store
+    "langchain-openai>=1.0",
+    "langchain-chroma>=1.0",
+    # notebook 03: SQLChatMessageHistory imports sqlalchemy.ext.asyncio (needs greenlet)
+    "sqlalchemy[asyncio]>=2.0",
+    # .env loading, Wikipedia download helper (notebooks 03, 04)
+    "python-dotenv>=1.0",
+    "requests>=2.31",
+    "tqdm>=4.66",
+    # IPython.display in notebooks 01, 02, 03, 05
+    "ipython>=8.0",
+    # notebook 05: multimodal RAG (NLTK data for Unstructured, HTML tables -> markdown, PIL images)
+    "nltk>=3.9",
+    "htmltabletomd>=0.0.1",
+    "pillow>=10.0",
+    # shared course helpers (get_llm / get_openai_llm), pinned release tag
+    "aied-helpers",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.4",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+aied-helpers = { git = "https://github.com/Sourav692/ai-engineering-demystified-shared.git", rev = "v0.1.0" }

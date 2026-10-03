@@ -1,0 +1,36 @@
+[project]
+name = "shopunow-agentic-rag"
+version = "0.1.0"
+description = "ShopUNow multi-department agentic RAG assistant: per-department Chroma stores and a LangGraph graph with memory."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # Core: LangGraph agentic RAG graph (02_agentic_rag_system.ipynb)
+    "langgraph>=1.0",
+    "langchain-core>=1.0",
+    "pydantic>=2.0",
+    # Per-department vector stores (both notebooks)
+    "chromadb>=1.0",
+    "langchain-chroma>=1.0",
+    # helpers/utils.py LLM / embedding providers (Databricks default, OpenAI, Groq)
+    "databricks-langchain>=0.8",
+    "langchain-openai>=1.0",
+    "langchain-groq>=1.0",
+    "openai>=1.0",
+    "python-dotenv>=1.0",
+    # optional persistent-memory cell (SqliteSaver) in 02_agentic_rag_system.ipynb
+    "langgraph-checkpoint-sqlite>=3.0",
+    # shared course helpers (get_llm / get_openai_llm), pinned release tag
+    "aied-helpers",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+aied-helpers = { git = "https://github.com/Sourav692/ai-engineering-demystified-shared.git", rev = "v0.1.0" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.4",
+]

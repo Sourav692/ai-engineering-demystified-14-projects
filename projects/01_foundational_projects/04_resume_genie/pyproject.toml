@@ -4,18 +4,32 @@ version = "0.2.0"
 description = "AI-powered resume tools: checker, scorer, cover letter generator, and career coach — with agentic orchestration"
 requires-python = ">=3.12"
 dependencies = [
-    "langchain_groq",
-    "langchain_community",
-    "langchain_core",
-    "langgraph",
+    "langchain_groq>=1.0",
+    "langchain_community>=0.4",
+    "langchain_core>=1.0",
+    "langgraph>=1.0",
     "pypdf",
     "python-dotenv",
     "streamlit",
     "pillow",
+    # shared course helpers (get_llm / get_openai_llm), pinned release tag
+    "aied-helpers",
 ]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+aied-helpers = { git = "https://github.com/Sourav692/ai-engineering-demystified-shared.git", rev = "v0.1.0" }
 
 [tool.setuptools]
 packages = ["agent"]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "jupyterlab>=4.5.6",
+]
 
 [project.optional-dependencies]
 dev = [
