@@ -46,7 +46,7 @@ Stands in for an identity provider. Resolves principal attributes fresh from a J
 
 ## config.py
 
-Central `Settings` dataclass holding every tunable value (paths, model names, chunking/retrieval parameters, guardrail thresholds). Loads `OPENAI_API_KEY` from a repo-root `.env` file found by walking up from this file's location, and disables the ambient LangSmith tracing env vars unless `ENTERPRISE_RAG_LANGSMITH=1` is set, since this project has its own trace layer.
+Central `Settings` dataclass holding every tunable value (paths, model names, chunking/retrieval parameters, guardrail thresholds). Loads `OPENAI_API_KEY` from the nearest `.env` file found by walking up from this file's location (this project's `.env` first), and disables the ambient LangSmith tracing env vars unless `ENTERPRISE_RAG_LANGSMITH=1` is set, since this project has its own trace layer.
 
 ##### `Settings`
 

@@ -141,26 +141,15 @@ runs the repository-wide structural checks. No tests were added during the migra
 - **Objective:** Build a permission-aware (ABAC) enterprise RAG platform with evaluation, attacks and observability.
 - **Tests / deterministic demo:** **yes** — `tests/` — policy, retrieval, pipeline and golden-set tests; the `llm` and `index` markers separate live tests, the rest run offline.
 - **Notebooks:**
-  - [`notebooks/02-hands-on-parts/part01-corpus-and-permissions.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part01-corpus-and-permissions.ipynb) — Enterprise RAG — Hands-On, Part 1 of 11: The corpus and its permissions
-  - [`notebooks/02-hands-on-parts/part02-policy-engine.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part02-policy-engine.ipynb) — Enterprise RAG — Hands-On, Part 2 of 11: The policy engine
-  - [`notebooks/02-hands-on-parts/part03-compiling-policy-to-filter.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part03-compiling-policy-to-filter.ipynb) — Enterprise RAG — Hands-On, Part 3 of 11: Compiling the policy into a database filter
-  - [`notebooks/02-hands-on-parts/part04-chunking-and-ingestion.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part04-chunking-and-ingestion.ipynb) — Enterprise RAG — Hands-On, Part 4 of 11: Chunking and ingestion
-  - [`notebooks/02-hands-on-parts/part05-hybrid-search.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part05-hybrid-search.ipynb) — Enterprise RAG — Hands-On, Part 5 of 11: Why hybrid search, demonstrated
-  - [`notebooks/02-hands-on-parts/part06-query-transformation.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part06-query-transformation.ipynb) — Enterprise RAG — Hands-On, Part 6 of 11: Query transformation
-  - [`notebooks/02-hands-on-parts/part07-reranking.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part07-reranking.ipynb) — Enterprise RAG — Hands-On, Part 7 of 11: Reranking
-  - [`notebooks/02-hands-on-parts/part08-full-graph.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part08-full-graph.ipynb) — Enterprise RAG — Hands-On, Part 8 of 11: The full graph
-  - [`notebooks/02-hands-on-parts/part09-attacking-it.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part09-attacking-it.ipynb) — Enterprise RAG — Hands-On, Part 9 of 11: Attacking it
-  - [`notebooks/02-hands-on-parts/part10-evaluation.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part10-evaluation.ipynb) — Enterprise RAG — Hands-On, Part 10 of 11: Evaluation
-  - [`notebooks/02-hands-on-parts/part11-observability-and-takeaways.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on-parts/part11-observability-and-takeaways.ipynb) — Enterprise RAG — Hands-On, Part 11 of 11: Observability, and what to take away
-  - [`notebooks/02-hands-on.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on.ipynb) — Enterprise RAG with Access Control - Hands On
-  - [`notebooks/04-databricks-enterprise-rag.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/04-databricks-enterprise-rag.ipynb) — Enterprise RAG with Access Control — on Databricks
+  - [`notebooks/02-hands-on.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/02-hands-on.ipynb) — 🔐 Enterprise RAG with Access Control - Hands On
+  - [`notebooks/04-databricks-enterprise-rag.ipynb`](../projects/03_enterprise_realtime_capstones/01_enterprise_rag_platform/notebooks/04-databricks-enterprise-rag.ipynb) — 🏛️ Enterprise RAG with Access Control — on Databricks
 
 ### 02 · [Enterprise Agentic Workflow Automation Platform](../projects/03_enterprise_realtime_capstones/02_enterprise_agentic_workflow_platform/)
 
 - **Objective:** Prove guardrail and orchestration properties of a no-code agent workflow platform deterministically.
 - **Tests / deterministic demo:** **yes** — 21 deterministic offline tests (`tests/test_platform.py`) plus two scripted demos.
 - **Notebooks:**
-  - [`notebooks/02-hands-on.ipynb`](../projects/03_enterprise_realtime_capstones/02_enterprise_agentic_workflow_platform/notebooks/02-hands-on.ipynb) — Agent Platform — Hands On
+  - [`notebooks/02-hands-on.ipynb`](../projects/03_enterprise_realtime_capstones/02_enterprise_agentic_workflow_platform/notebooks/02-hands-on.ipynb) — 🤖 Agent Platform — Hands On: a governed, multi-channel workflow engine
 
 ### 03 · [Enterprise Multi-Agent AI Research Platform](../projects/03_enterprise_realtime_capstones/03_enterprise_multi_agent_research_platform/)
 
@@ -173,7 +162,7 @@ runs the repository-wide structural checks. No tests were added during the migra
 - **Objective:** Model an agent delivery engagement as a gate-enforcing state machine with measurable reuse.
 - **Tests / deterministic demo:** **yes** — 17 deterministic offline tests (`tests/test_gates.py`) plus two scripted demos.
 - **Notebooks:**
-  - [`notebooks/02-hands-on.ipynb`](../projects/03_enterprise_realtime_capstones/04_fde_delivery_framework/notebooks/02-hands-on.ipynb) — Delivery Framework — Hands On
+  - [`notebooks/02-hands-on.ipynb`](../projects/03_enterprise_realtime_capstones/04_fde_delivery_framework/notebooks/02-hands-on.ipynb) — 🏗️ Delivery Framework — Hands On: a gated 14-day FDE engagement pipeline
 
 ### 05 · [Realtime Voice AI Agent with RAG](../projects/03_enterprise_realtime_capstones/05_realtime_voice_ai_agent_with_rag/)
 

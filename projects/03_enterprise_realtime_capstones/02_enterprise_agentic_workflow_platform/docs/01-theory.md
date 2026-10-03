@@ -261,7 +261,7 @@ Five ideas, stated as design constraints:
    be generated *from*.
 5. **Staged rollout: draft → test → shadow → live (approved) → autonomous** — built exactly as named,
    as an ordered, role-gated promotion (`workflows.py::promote()`), the same shape as
-   `delivery_framework_platform`'s stage gates.
+   `04_fde_delivery_framework`'s stage gates.
 
 ---
 
@@ -300,7 +300,7 @@ ceiling on *which* actions can skip approval; it never removes the ceiling itsel
 Third project in the series, same `Decision(allowed, rule, reason)` shape as the RAG project's
 `authz.policy.decide()` and the delivery framework's `gates.py::sign_off()`:
 
-| Concept here | Concept in `delivery_framework_platform` | Concept in `enterprise_rag_platform` |
+| Concept here | Concept in `04_fde_delivery_framework` | Concept in `01_enterprise_rag_platform` |
 |---|---|---|
 | `guardrails.py::authorize_step()` | `gates.py::sign_off()` | `authz/policy.py::decide()` |
 | Staged workflow rollout (`workflows.py::promote()`) | Staged engagement pipeline (`engine.py::advance_stage()`) | Layer 1 pre-filter / Layer 2 authoritative re-check |
