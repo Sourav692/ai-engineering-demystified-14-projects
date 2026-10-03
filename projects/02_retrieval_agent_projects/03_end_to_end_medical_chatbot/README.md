@@ -6,7 +6,7 @@ Project 03 of **group 02 (retrieval and agent projects)** in *AI Engineering Dem
 
 - **Prerequisites (knowledge):** [repository 03 (LangChain fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-03-langchain-fundamentals), [repository 05 (retrieval and RAG)](https://github.com/Sourav692/ai-engineering-demystified-05-retrieval-rag), [repository 13 (production and observability)](https://github.com/Sourav692/ai-engineering-demystified-13-production-observability).
 - **What it integrates:** PDF ingestion of a medical encyclopedia, Hugging Face embeddings, a Pinecone index, a Groq-backed LangChain retrieval chain, a Flask chat UI, Docker, and two deployment paths (AWS ECR/EC2 via GitHub Actions, and Databricks Apps).
-- **External services and expected cost:** Pinecone (free starter index), Groq; AWS EC2/ECR or Databricks Apps only if you deploy (those bill by uptime).
+- **External services and expected cost:** Pinecone (free starter index), Groq (app), OpenAI `gpt-4o-mini` (notebook, cents per run); AWS EC2/ECR or Databricks Apps only if you deploy (those bill by uptime).
 - **Tests / offline demo:** no tests; `research/demo.ipynb` is the exploratory build (live).
 - **Environment variables:** copy [.env.example](.env.example) to `.env` and fill in what you use; never commit `.env`.
 
@@ -14,13 +14,13 @@ Project 03 of **group 02 (retrieval and agent projects)** in *AI Engineering Dem
 
 ```bash
 uv sync                           # creates .venv from pyproject.toml / uv.lock
-cp .env.example .env              # add PINECONE_API_KEY and GROQ_API_KEY
+cp .env.example .env              # add PINECONE_API_KEY, GROQ_API_KEY (app) and OPENAI_API_KEY (notebook)
 uv run jupyter lab research/demo.ipynb   # exploratory build
 uv run python store_index.py      # embed data/Medical_book.pdf into Pinecone
 uv run python app.py              # http://localhost:8080
 ```
 
-The original README below mentions OpenAI; the code now uses Groq. [DATABRICKS_APP_DEPLOYMENT.md](DATABRICKS_APP_DEPLOYMENT.md) covers the Databricks path.
+The original README below mentions OpenAI for the app; `app.py` now uses Groq. `research/demo.ipynb` uses OpenAI `gpt-4o-mini` through the course factory `aied_helpers.get_openai_llm`. [DATABRICKS_APP_DEPLOYMENT.md](DATABRICKS_APP_DEPLOYMENT.md) covers the Databricks path.
 
 
 Flask + Pinecone medical RAG chatbot.
