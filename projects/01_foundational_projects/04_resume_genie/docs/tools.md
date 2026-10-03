@@ -9,6 +9,8 @@ All tools share the same backend stack:
 - **Orchestration**: LangChain (`langchain_groq`, `langchain_core`)
 - **Streaming**: All tools stream LLM output token-by-token in the UI
 
+The notebooks build the same prompts but create their model with `aied_helpers.get_openai_llm(model="gpt-4o-mini")` (needs `OPENAI_API_KEY`); the scripts and the agent app use Groq as above.
+
 ---
 
 ## 1. Cover Letter Generator

@@ -14,14 +14,14 @@ runs the repository-wide structural checks. No tests were added during the migra
 - **Tests / deterministic demo:** **yes** — 12 offline pytest cases (`tests/test_agent.py`); the rule-based brain makes every run deterministic.
 - **Notebooks:**
   - [`notebooks/agent_tool_calling_demo.ipynb`](../projects/01_foundational_projects/01_agent_tool_calling_foundations/notebooks/agent_tool_calling_demo.ipynb) — 🤖 Agent Tool-Calling Loop — Guided Demo
-  - [`notebooks/agent_tool_calling_demo_openai.ipynb`](../projects/01_foundational_projects/01_agent_tool_calling_foundations/notebooks/agent_tool_calling_demo_openai.ipynb) — Agent Tool-Calling Loop — Single-Notebook Demo (Real LLM)
-  - [`notebooks/langgraph_react_agent.ipynb`](../projects/01_foundational_projects/01_agent_tool_calling_foundations/notebooks/langgraph_react_agent.ipynb) — LangGraph ReAct Agent — Production-Shaped Reference (+ DevRev Prep Pointers)
   - [`notebooks/robust_langgraph_tool_calling_agent.ipynb`](../projects/01_foundational_projects/01_agent_tool_calling_foundations/notebooks/robust_langgraph_tool_calling_agent.ipynb) — 🤖 Native LangGraph Tool Calling Agent (Idiomatic @tool Pattern)
+  - [`notebooks/agent_tool_calling_demo_openai.ipynb`](../projects/01_foundational_projects/01_agent_tool_calling_foundations/notebooks/agent_tool_calling_demo_openai.ipynb) — 🤖 Agent Tool-Calling Loop — Single-Notebook Demo (Real LLM)
+  - [`notebooks/langgraph_react_agent.ipynb`](../projects/01_foundational_projects/01_agent_tool_calling_foundations/notebooks/langgraph_react_agent.ipynb) — 🕸️ LangGraph ReAct Agent — Production-Shaped Reference (+ DevRev Prep Pointers)
 
 ### 02 · [Automated Candidate Interview & Evaluation System](../projects/01_foundational_projects/02_automated_candidate_interview_evaluation/)
 
 - **Objective:** Run an AutoGen interviewer/candidate/evaluator team behind a FastAPI WebSocket UI.
-- **Tests / deterministic demo:** none — no automated tests; `agent.ipynb` runs the same interview loop interactively (live, needs Groq).
+- **Tests / deterministic demo:** none — no automated tests; `agent.ipynb` runs the same interview loop (live, needs Groq; scripted candidate answers by default, set `INTERACTIVE = True` to type your own).
 - **Notebooks:**
   - [`agent.ipynb`](../projects/01_foundational_projects/02_automated_candidate_interview_evaluation/agent.ipynb) — 🎯 Automated Candidate Interview & Evaluation System
 
@@ -34,24 +34,24 @@ runs the repository-wide structural checks. No tests were added during the migra
 ### 04 · [Resume Genie](../projects/01_foundational_projects/04_resume_genie/)
 
 - **Objective:** Build a Streamlit career suite whose LangGraph agent routes and chains resume tools.
-- **Tests / deterministic demo:** none — no automated tests; `notebooks/Agent_Testing.ipynb` exercises the agent manually (live, needs Groq; uses the sample résumé in `content/`).
+- **Tests / deterministic demo:** none — no automated tests; `notebooks/Agent_Testing.ipynb` exercises the agent manually (live, needs OpenAI: it builds the graph on `gpt-4o-mini` via `aied_helpers`; uses the sample résumé in `content/`).
 - **Notebooks:**
-  - [`notebooks/AI_Career_Coach.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/AI_Career_Coach.ipynb) — 🎯 AI Career Coach
-  - [`notebooks/Agent_Testing.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/Agent_Testing.ipynb) — 🧪 Resume Genie Agent — Testing Notebook
-  - [`notebooks/Cover_Letter_Generator.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/Cover_Letter_Generator.ipynb) — ✉️ Cover Letter Generator
   - [`notebooks/Resume_Checker.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/Resume_Checker.ipynb) — 🔍 Resume Checker
   - [`notebooks/Resume_Scorer.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/Resume_Scorer.ipynb) — 🧮 Resume Scorer
+  - [`notebooks/Cover_Letter_Generator.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/Cover_Letter_Generator.ipynb) — ✉️ Cover Letter Generator
+  - [`notebooks/AI_Career_Coach.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/AI_Career_Coach.ipynb) — 🎯 AI Career Coach
+  - [`notebooks/Agent_Testing.ipynb`](../projects/01_foundational_projects/04_resume_genie/notebooks/Agent_Testing.ipynb) — 🧪 Resume Genie Agent — Testing Notebook
 
 ### 05 · [RAG Systems Projects](../projects/01_foundational_projects/05_rag_systems_projects/)
 
 - **Objective:** Apply LangChain RAG end to end: search engine, Q&A, conversational, multi-user and multimodal RAG.
 - **Tests / deterministic demo:** none — no tests; notebooks only (live, need OpenAI).
 - **Notebooks:**
-  - [`notebooks/01_build_document_retriever_search_engine.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/01_build_document_retriever_search_engine.ipynb) — Build Document Retriever Search Engine
-  - [`notebooks/02_rag_system_for_question_answering.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/02_rag_system_for_question_answering.ipynb) — RAG system for Question Answering
-  - [`notebooks/03_simple_conversational_and_multi_user_rag.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/03_simple_conversational_and_multi_user_rag.ipynb) — M8 Simple RAG, Conversational RAG and Multi User Conversational RAG Systems
-  - [`notebooks/04_multi_user_conversational_rag_system.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/04_multi_user_conversational_rag_system.ipynb) — Multi user Conversational RAG System
-  - [`notebooks/05_multimodal_rag_with_gpt_4o.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/05_multimodal_rag_with_gpt_4o.ipynb) — Multi-modal RAG System
+  - [`notebooks/01_build_document_retriever_search_engine.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/01_build_document_retriever_search_engine.ipynb) — 🔎 Build a Document Retriever Search Engine
+  - [`notebooks/02_rag_system_for_question_answering.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/02_rag_system_for_question_answering.ipynb) — ❓ RAG System for Question Answering
+  - [`notebooks/03_conversational_rag.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/03_conversational_rag.ipynb) — 💬 Conversational RAG with Chat History
+  - [`notebooks/04_multi_user_conversational_rag_system.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/04_multi_user_conversational_rag_system.ipynb) — 👥 Multi-User Conversational RAG System
+  - [`notebooks/05_multimodal_rag_with_gpt_4o.ipynb`](../projects/01_foundational_projects/05_rag_systems_projects/notebooks/05_multimodal_rag_with_gpt_4o.ipynb) — 🖼️ Multimodal RAG with GPT-4o-Family Models
 
 ## 02 · Retrieval and agent projects
 

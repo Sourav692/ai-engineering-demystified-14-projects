@@ -6,7 +6,7 @@ Project 01 of **group 01 (foundational projects)** in *AI Engineering Demystifie
 
 - **Prerequisites (knowledge):** [repository 01 (foundations)](https://github.com/Sourav692/ai-engineering-demystified-01-foundations), [repository 02 (prompt and context engineering)](https://github.com/Sourav692/ai-engineering-demystified-02-prompt-context-engineering), [repository 04 (LangGraph fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-04-langgraph-fundamentals), [repository 06 (agent fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-06-agent-fundamentals).
 - **What it integrates:** the single-agent loop (tool registry, routing, max-iteration guard, confirmation gate, retry, memoisation, fallback, tool-call logging) written twice: as a plain Python `while` loop and as a two-node LangGraph `StateGraph`.
-- **External services and expected cost:** none for the core agent, the tests or the main notebook — the "brain" is a deterministic rule-based router. The optional real-LLM notebooks call OpenAI (`agent_tool_calling_demo_openai.ipynb`) or Anthropic (`langgraph_react_agent.ipynb`); a full run costs cents.
+- **External services and expected cost:** none for the core agent, the tests or the two offline notebooks (`agent_tool_calling_demo.ipynb`, `robust_langgraph_tool_calling_agent.ipynb`) — the "brain" is a deterministic rule-based router. The optional real-LLM notebooks (`agent_tool_calling_demo_openai.ipynb`, `langgraph_react_agent.ipynb`) call OpenAI `gpt-4o-mini`; a full run costs cents.
 - **Tests / offline demo:** 12 offline pytest cases (`tests/test_agent.py`); the rule-based brain makes every run deterministic.
 - **Environment variables:** copy [.env.example](.env.example) to `.env` and fill in what you use; never commit `.env`.
 
@@ -59,7 +59,7 @@ query ─▶ [ THINK: brain picks a tool or finishes ]
 ## Run it
 
 ```bash
-cd agent_tool_calling_demo
+cd projects/01_foundational_projects/01_agent_tool_calling_foundations
 uv sync                                  # (the from-scratch agent needs nothing installed)
 
 uv run pytest -q                          # 12 tests, all green
@@ -80,7 +80,7 @@ uv run jupyter lab notebooks/agent_tool_calling_demo.ipynb   # the guided walkth
 ## Project layout
 
 ```
-agent_tool_calling_demo/
+01_agent_tool_calling_foundations/
 ├── README.md                 ← you are here
 ├── requirements.txt
 ├── src/
@@ -90,12 +90,13 @@ agent_tool_calling_demo/
 │   ├── observability.py      ← ToolCallLogger + trace table
 │   ├── scratch_agent.py      ← the ReAct loop, coded from scratch  (+ Session for multi-turn state)
 │   └── langgraph_agent.py    ← the same loop as a LangGraph StateGraph
-├── notebooks/
-│   └── agent_tool_calling_demo.ipynb   ← guided, runnable walkthrough of every concept
-├── tests/
-│   └── test_agent.py         ← 12 pytest cases
-└── docs/
-    └── DESIGN.md             ← state, observability, and parallel-vs-sequential tradeoffs
+├── notebooks/                ← read in this order
+│   ├── agent_tool_calling_demo.ipynb              ← guided walkthrough of src/ (offline)
+│   ├── robust_langgraph_tool_calling_agent.ipynb  ← policy as @tool tags/metadata (offline)
+│   ├── agent_tool_calling_demo_openai.ipynb       ← the loop from scratch, real LLM (OpenAI)
+│   └── langgraph_react_agent.ipynb                ← LangGraph + real LLM + interrupt() gate (OpenAI)
+└── tests/
+    └── test_agent.py         ← 12 pytest cases
 ```
 
 ---

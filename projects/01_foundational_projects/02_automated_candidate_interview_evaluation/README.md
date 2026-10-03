@@ -7,7 +7,7 @@ Project 02 of **group 01 (foundational projects)** in *AI Engineering Demystifie
 - **Prerequisites (knowledge):** [repository 01 (foundations)](https://github.com/Sourav692/ai-engineering-demystified-01-foundations), [repository 02 (prompt and context engineering)](https://github.com/Sourav692/ai-engineering-demystified-02-prompt-context-engineering), [repository 06 (agent fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-06-agent-fundamentals), [repository 11 (alternative agent frameworks)](https://github.com/Sourav692/ai-engineering-demystified-11-alternative-agent-frameworks).
 - **What it integrates:** an AutoGen AgentChat round-robin team (interviewer, human candidate, evaluator) streamed over a FastAPI WebSocket to a small HTML/JS chat UI, with a Render deployment blueprint.
 - **External services and expected cost:** Groq (`llama-3.3-70b-versatile`); the free tier is enough for a full interview. Render hosting is optional.
-- **Tests / offline demo:** no automated tests; `agent.ipynb` runs the same interview loop interactively (live, needs Groq).
+- **Tests / offline demo:** no automated tests; `agent.ipynb` runs the same interview loop (live, needs Groq) with scripted candidate answers by default — set `INTERACTIVE = True` to type your own.
 - **Environment variables:** copy [.env.example](.env.example) to `.env` and fill in what you use; never commit `.env`.
 
 ### How to run
@@ -114,20 +114,12 @@ The app is now live at [http://localhost:8000](http://localhost:8000).
 4. Answer each question in the chat — the Evaluator gives feedback after every response
 5. After 3 questions the interview ends with a performance summary
 
-### Notebook (Interactive)
+### Notebook
 
-The notebook `agent.ipynb` runs the same interview loop in a Jupyter environment with terminal-based input — useful for experimentation and learning how the agents work.
+The notebook `agent.ipynb` runs the same interview loop in Jupyter — useful for experimentation and learning how the agents work. The candidate's answers are scripted by default; set `INTERACTIVE = True` in Part 3 to answer at an `input()` prompt.
 
 ```bash
 uv run jupyter lab agent.ipynb
-```
-
-### CLI Script
-
-`agent_test.py` provides a minimal command-line version using OpenAI directly:
-
-```bash
-uv run python agent_test.py
 ```
 
 ## Project Structure
@@ -135,8 +127,7 @@ uv run python agent_test.py
 ```
 .
 ├── app.py                 # FastAPI server — WebSocket interview endpoint
-├── agent_test.ipynb       # Jupyter notebook walkthrough
-├── agent_test.py          # CLI version of the interview
+├── agent.ipynb            # Jupyter notebook walkthrough
 ├── templates/
 │   └── index.html         # Chat UI template
 ├── static/

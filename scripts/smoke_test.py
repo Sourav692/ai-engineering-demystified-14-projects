@@ -16,7 +16,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP = {".venv", ".git", ".ipynb_checkpoints", "node_modules", "__pycache__"}
+# .tracker is the local, git-ignored cleanup tracker
+SKIP = {".venv", ".git", ".ipynb_checkpoints", "node_modules", "__pycache__", ".tracker"}
 
 
 def main() -> int:
