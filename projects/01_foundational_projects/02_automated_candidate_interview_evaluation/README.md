@@ -13,9 +13,9 @@ Project 02 of **group 01 (foundational projects)** in *AI Engineering Demystifie
 ### How to run
 
 ```bash
-pip install -r requirements.txt
+uv sync                 # creates .venv from pyproject.toml + uv.lock
 cp .env.example .env    # add GROQ_API_KEY
-uvicorn app:app --reload   # http://localhost:8000
+uv run uvicorn app:app --reload   # http://localhost:8000
 ```
 
 
@@ -49,18 +49,18 @@ The backend streams agent messages over a WebSocket. The frontend locks the inpu
 git clone https://github.com/Sourav692/AgenticAI_Projects_Demystified.git
 cd "Automated Candidate Interview & Evaluation System"
 
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+uv sync                     # creates .venv from pyproject.toml + uv.lock
 
 cp .env.example .env        # then paste your Groq key
-uvicorn app:app --reload
+uv run uvicorn app:app --reload
 ```
 
 Open [http://localhost:8000](http://localhost:8000), enter a job role, and start interviewing.
 
 ## Prerequisites
 
-- Python 3.12+
+- Python 3.12
+- [uv](https://docs.astral.sh/uv/)
 - A [Groq API key](https://console.groq.com) (free tier works)
 
 ## Installation
@@ -72,17 +72,16 @@ git clone https://github.com/Sourav692/AgenticAI_Projects_Demystified.git
 cd "Automated Candidate Interview & Evaluation System"
 ```
 
-### 2. Create a virtual environment
+### 2. Create the environment and install dependencies
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+uv sync   # creates .venv from pyproject.toml + uv.lock (includes Jupyter)
 ```
 
-### 3. Install dependencies
+### 3. (Optional) Register the Jupyter kernel
 
 ```bash
-pip install -r requirements.txt
+uv run python -m ipykernel install --user --name interview-coach
 ```
 
 ### 4. Configure environment variables
@@ -100,7 +99,7 @@ GROQ_API_KEY=gsk_your_key_here
 ### 5. Run the application
 
 ```bash
-uvicorn app:app --reload
+uv run uvicorn app:app --reload
 ```
 
 The app is now live at [http://localhost:8000](http://localhost:8000).
@@ -117,10 +116,10 @@ The app is now live at [http://localhost:8000](http://localhost:8000).
 
 ### Notebook (Interactive)
 
-The notebook `agent_test.ipynb` runs the same interview loop in a Jupyter environment with terminal-based input — useful for experimentation and learning how the agents work.
+The notebook `agent.ipynb` runs the same interview loop in a Jupyter environment with terminal-based input — useful for experimentation and learning how the agents work.
 
 ```bash
-jupyter notebook agent_test.ipynb
+uv run jupyter lab agent.ipynb
 ```
 
 ### CLI Script
@@ -128,7 +127,7 @@ jupyter notebook agent_test.ipynb
 `agent_test.py` provides a minimal command-line version using OpenAI directly:
 
 ```bash
-python agent_test.py
+uv run python agent_test.py
 ```
 
 ## Project Structure

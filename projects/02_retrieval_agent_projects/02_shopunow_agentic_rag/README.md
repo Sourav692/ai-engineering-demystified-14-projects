@@ -15,10 +15,9 @@ Project 02 of **group 02 (retrieval and agent projects)** in *AI Engineering Dem
 ### How to run
 
 ```bash
-pip install langchain-openai langchain-groq databricks-langchain openai python-dotenv \
-    langchain-chroma chromadb langgraph langgraph-checkpoint-sqlite pydantic jupyterlab
+uv sync                # creates .venv from pyproject.toml / uv.lock
 cp .env.example .env
-jupyter lab    # run 01_create_vector_databases.ipynb, then 02_agentic_rag_system.ipynb
+uv run jupyter lab     # run 01_create_vector_databases.ipynb, then 02_agentic_rag_system.ipynb
 ```
 
-The notebooks import `helpers.utils` (the course's LLM/embedding factory); a copy ships in `helpers/` beside them. The package list above is what the notebooks and `helpers` import — the project has no manifest of its own. [WALKTHROUGH.md](WALKTHROUGH.md) explains every node.
+The notebooks import `helpers.utils` (the course's LLM/embedding factory); a copy ships in `helpers/` beside them. `pyproject.toml` declares what the notebooks and `helpers` import; `uv.lock` pins it (`requirements.txt` is an export of the lock). [WALKTHROUGH.md](WALKTHROUGH.md) explains every node.

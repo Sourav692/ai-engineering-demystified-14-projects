@@ -28,9 +28,6 @@ Thumbs.db
 # Jupyter
 .ipynb_checkpoints/
 
-# uv lock (regenerated from pyproject.toml)
-uv.lock
-
 # Cursor / Claude agent artifacts
 .cursor/
 .claude/

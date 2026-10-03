@@ -24,6 +24,9 @@ chroma_db/
 outputs/
 runs/
 
+# Local cleanup tracker (never committed)
+.tracker/
+
 # OS / editors
 .DS_Store
 .idea/

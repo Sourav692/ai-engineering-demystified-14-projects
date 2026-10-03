@@ -19,9 +19,9 @@ path does not exist — hence the direct REST approach.)
 | `validate_vector_search_acl.py` | **The ABAC group-overlap filter** — builds a real Delta Sync index and checks 6 personas return exactly the right documents |
 
 ```bash
-python databricks/validate_uc_governance.py
-python databricks/validate_vector_search_syntax.py
-python databricks/validate_vector_search_acl.py   # creates + deletes an index; takes ~3 min
+uv run python databricks/validate_uc_governance.py
+uv run python databricks/validate_vector_search_syntax.py
+uv run python databricks/validate_vector_search_acl.py   # creates + deletes an index; takes ~3 min
 ```
 
 ## Results as of 2026-08-22

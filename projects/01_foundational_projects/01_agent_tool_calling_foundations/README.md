@@ -13,9 +13,9 @@ Project 01 of **group 01 (foundational projects)** in *AI Engineering Demystifie
 ### How to run
 
 ```bash
-pip install -r requirements.txt   # the from-scratch agent needs nothing installed
-python -m pytest -q                # 12 offline tests
-jupyter lab notebooks/
+uv sync                            # creates .venv from pyproject.toml / uv.lock
+uv run pytest -q                   # 12 offline tests
+uv run jupyter lab notebooks/
 ```
 
 
@@ -60,15 +60,15 @@ query ─▶ [ THINK: brain picks a tool or finishes ]
 
 ```bash
 cd agent_tool_calling_demo
-pip install -r requirements.txt          # (the from-scratch agent needs nothing installed)
+uv sync                                  # (the from-scratch agent needs nothing installed)
 
-python -m pytest -q                       # 12 tests, all green
-python -c "import sys; sys.path.insert(0,'.'); \
+uv run pytest -q                          # 12 tests, all green
+uv run python -c "import sys; sys.path.insert(0,'.'); \
   from src.tools import TicketStore, build_registry; \
   from src.scratch_agent import Agent; from src.robustness import always_approve; \
   print(Agent(build_registry(TicketStore()), confirm=always_approve).run('close the ticket about login').answer)"
 
-jupyter notebook notebooks/agent_tool_calling_demo.ipynb   # the guided walkthrough
+uv run jupyter lab notebooks/agent_tool_calling_demo.ipynb   # the guided walkthrough
 ```
 
 > **No API key needed.** The "brain" is a deterministic rule-based router

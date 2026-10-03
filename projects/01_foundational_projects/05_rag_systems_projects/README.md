@@ -17,11 +17,13 @@ Project 05 of **group 01 (foundational projects)** in *AI Engineering Demystifie
 ### How to run
 
 ```bash
+uv sync                 # creates .venv from pyproject.toml / uv.lock in this folder
 cp .env.example .env    # add OPENAI_API_KEY (or paste it when a notebook asks)
-jupyter lab notebooks/
+uv run jupyter lab notebooks/
 ```
 
-Each notebook installs what it needs in its first cells (`!pip install ...`). Notebook 05 reads `data/IF10244.pdf`, which you download first: `https://sgp.fas.org/crs/misc/IF10244.pdf` (the notebook's own commented `wget` cell).
+Dependencies live in this folder's `pyproject.toml` / `uv.lock` (`requirements.txt` is exported from the lock); the
+notebooks no longer install packages themselves. Notebook 05 reads `data/IF10244.pdf`, which you download first: `https://sgp.fas.org/crs/misc/IF10244.pdf` (the notebook's own commented `wget` cell).
 
 ## Modules
 

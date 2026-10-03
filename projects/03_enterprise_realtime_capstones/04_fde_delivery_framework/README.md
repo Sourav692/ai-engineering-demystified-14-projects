@@ -13,9 +13,11 @@ Project 04 of **group 03 (enterprise and realtime capstones)** in *AI Engineerin
 ### How to run
 
 ```bash
-python scripts/run_engagement_demo.py
-python scripts/demo_gate_failure.py
-pip install pytest && python -m pytest -q
+uv sync                                  # creates .venv from pyproject.toml / uv.lock
+uv run python scripts/run_engagement_demo.py
+uv run python scripts/demo_gate_failure.py
+uv run pytest -q
+uv run jupyter lab notebooks/
 ```
 
 
@@ -56,13 +58,13 @@ this project is about.
 
 ```bash
 # 1. The happy path - Northwind Logistics, all 14 days, every gate signed in order
-python scripts/run_engagement_demo.py
+uv run python scripts/run_engagement_demo.py
 
 # 2. The negative-control demo - the one to run in front of an interviewer
-python scripts/demo_gate_failure.py
+uv run python scripts/demo_gate_failure.py
 
 # 3. Tests
-python -m pytest -q     # 17 tests, deterministic, no API calls, well under a second
+uv run pytest -q        # 17 tests, deterministic, no API calls, well under a second
 ```
 
 ---

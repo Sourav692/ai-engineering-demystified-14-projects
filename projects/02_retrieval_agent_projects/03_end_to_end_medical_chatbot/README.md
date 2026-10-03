@@ -13,10 +13,11 @@ Project 03 of **group 02 (retrieval and agent projects)** in *AI Engineering Dem
 ### How to run
 
 ```bash
-pip install -r requirements.txt   # or: uv sync
+uv sync                           # creates .venv from pyproject.toml / uv.lock
 cp .env.example .env              # add PINECONE_API_KEY and GROQ_API_KEY
-python store_index.py             # embed data/Medical_book.pdf into Pinecone
-python app.py                     # http://localhost:8080
+uv run jupyter lab research/demo.ipynb   # exploratory build
+uv run python store_index.py      # embed data/Medical_book.pdf into Pinecone
+uv run python app.py              # http://localhost:8080
 ```
 
 The original README below mentions OpenAI; the code now uses Groq. [DATABRICKS_APP_DEPLOYMENT.md](DATABRICKS_APP_DEPLOYMENT.md) covers the Databricks path.
@@ -35,20 +36,10 @@ Clone the repository
 https://github.com/entbappy/End-to-End-Medical-Chatbot
 ```
 
-### STEP 01- Create a conda environment after opening the repository
+### STEP 01- Create the environment after opening the repository
 
 ```bash
-conda create -n medibot python=3.10 -y
-```
-
-
-```bash
-conda activate medibot
-```
-
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ### Create a `.env` file in the root directory and add your Pinecone & openai credentials as follows:
@@ -61,12 +52,12 @@ OPENAI_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 ```bash
 # run the following command to store embeddings to pinecone
-python store_index.py
+uv run python store_index.py
 ```
 
 ```bash
 # Finally run the following command
-python app.py
+uv run python app.py
 ```
 
 Now,

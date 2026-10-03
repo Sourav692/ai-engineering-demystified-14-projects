@@ -1,0 +1,36 @@
+[project]
+name = "automated-candidate-interview-evaluation"
+version = "0.1.0"
+description = "AI Interview Coach: an AutoGen AgentChat interviewer/candidate/evaluator team streamed over a FastAPI WebSocket."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # Core: AutoGen AgentChat team (agent.ipynb and app.py)
+    "autogen-agentchat>=0.5.7",
+    "autogen-core>=0.5.7",
+    # OpenAIChatCompletionClient (pointed at Groq's OpenAI-compatible endpoint)
+    "autogen-ext[openai]>=0.5.7",
+    "openai>=1.0",
+    "tiktoken>=0.7",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+    # Web app (app.py): FastAPI + WebSocket chat UI
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "websockets>=12.0",
+    "jinja2>=3.1",
+    "aiofiles>=23.0",
+    # shared course helpers (get_llm / get_openai_llm), pinned release tag
+    "aied-helpers",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+aied-helpers = { git = "https://github.com/Sourav692/ai-engineering-demystified-shared.git", rev = "v0.1.0" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.4",
+]
