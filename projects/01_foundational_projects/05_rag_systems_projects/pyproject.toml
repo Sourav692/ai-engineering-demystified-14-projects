@@ -28,6 +28,14 @@ dependencies = [
     "pillow>=10.0",
     # shared course helpers (get_llm / get_openai_llm), pinned release tag
     "aied-helpers",
+    # notebook 01: JSONLoader (jq) and PyMuPDFLoader (pymupdf); notebook 02: PyMuPDFLoader
+    "jq>=1.12.0",
+    "pymupdf>=1.28.2",
+    # notebook 01: HuggingFaceCrossEncoder reranker (pulls torch)
+    "sentence-transformers>=6.1.0",
+    # notebook 05: UnstructuredPDFLoader hi_res partitioning and the Redis docstore client
+    "unstructured[pdf]>=0.27.10",
+    "redis>=8.1.0",
 ]
 
 [dependency-groups]

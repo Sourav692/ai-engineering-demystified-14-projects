@@ -6,15 +6,15 @@ Project 04 of **group 01 (foundational projects)** in *AI Engineering Demystifie
 
 - **Prerequisites (knowledge):** [repository 01 (foundations)](https://github.com/Sourav692/ai-engineering-demystified-01-foundations), [repository 02 (prompt and context engineering)](https://github.com/Sourav692/ai-engineering-demystified-02-prompt-context-engineering), [repository 04 (LangGraph fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-04-langgraph-fundamentals), [repository 05 (retrieval and RAG)](https://github.com/Sourav692/ai-engineering-demystified-05-retrieval-rag), [repository 06 (agent fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-06-agent-fundamentals).
 - **What it integrates:** PDF loading, prompt-engineered career tools (checker, JD scorer, cover letter, coach) and a LangGraph router agent that chains them, all behind Streamlit.
-- **External services and expected cost:** Groq (Llama 3.3 70B); the free tier is enough.
-- **Tests / offline demo:** no automated tests; `notebooks/Agent_Testing.ipynb` exercises the agent manually (live, needs Groq; uses the sample résumé in `content/`).
+- **External services and expected cost:** Groq (Llama 3.3 70B) for the Streamlit apps; the free tier is enough. OpenAI (`gpt-4o-mini`) for the notebooks; a full pass through all five costs a few cents.
+- **Tests / offline demo:** no automated tests; `notebooks/Agent_Testing.ipynb` exercises the agent manually (live, needs OpenAI — it builds the graph on `gpt-4o-mini`; uses the sample résumé in `content/`).
 - **Environment variables:** copy [.env.example](.env.example) to `.env` and fill in what you use; never commit `.env`.
 
 ### How to run
 
 ```bash
 uv sync                        # creates .venv from pyproject.toml + uv.lock (includes Jupyter)
-cp .env.example .env           # add GROQ_API_KEY
+cp .env.example .env           # add GROQ_API_KEY (apps) and OPENAI_API_KEY (notebooks)
 uv run streamlit run agent/app.py     # agentic chat UI
 uv run streamlit run scripts/main_dashboard.py
 ```
@@ -96,7 +96,8 @@ Streamlit + LangGraph career suite (cover letter, JD match, resume checker, coac
 
 - Python 3.12+
 - [uv](https://docs.astral.sh/uv/)
-- A free [Groq API key](https://console.groq.com/)
+- A free [Groq API key](https://console.groq.com/) for the Streamlit apps
+- An [OpenAI API key](https://platform.openai.com/api-keys) for the notebooks (they use `gpt-4o-mini` through `aied_helpers.get_openai_llm`)
 
 ### Setup
 
@@ -114,7 +115,8 @@ uv sync
 Create a `.env` file in the project root:
 
 ```env
-GROQ_API_KEY=your-groq-api-key-here
+GROQ_API_KEY=your-groq-api-key-here      # agent/ and scripts/ (Streamlit apps)
+OPENAI_API_KEY=your-openai-api-key-here  # notebooks/
 ```
 
 ### Run
@@ -176,11 +178,12 @@ Resume-Genie/
 │   ├── resume_scorer.py                 # Standalone resume-JD matcher
 │   ├── resume_checker.py               # Standalone resume evaluator
 │   └── ai_career_coach.py              # Standalone career coach chatbot
-├── notebooks/                           # Jupyter notebook prototypes
-│   ├── AI_Career_Coach.ipynb
-│   ├── Cover_Letter_Generator.ipynb
+├── notebooks/                           # Jupyter notebooks, in teaching order
+│   ├── Resume_Checker.ipynb
 │   ├── Resume_Scorer.ipynb
-│   └── Resume_Checker.ipynb
+│   ├── Cover_Letter_Generator.ipynb
+│   ├── AI_Career_Coach.ipynb
+│   └── Agent_Testing.ipynb              # routes every query through the LangGraph agent
 ├── assets/                              # Images and diagrams
 │   ├── image.png                        # Project banner
 │   ├── logo.png                         # App sidebar logo

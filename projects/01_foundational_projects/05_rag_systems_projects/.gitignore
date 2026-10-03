@@ -1,0 +1,13 @@
+# Files the notebooks create at run time (never commit them)
+# Chroma vector DBs (notebooks 01-04)
+notebooks/my_db/
+notebooks/final_project/
+notebooks/wiki_db/
+# Wikipedia dump downloaded by notebooks 03 and 04
+notebooks/simplewiki-2020-11-01.jsonl.gz
+notebooks/simplewiki-2020-11-01.jsonl.gz_part
+# per-session chat histories (notebook 04)
+notebooks/memory.db
+# images extracted by Unstructured and the source PDF downloaded by notebook 05
+notebooks/figures/
+data/IF10244.pdf

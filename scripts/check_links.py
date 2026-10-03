@@ -22,7 +22,8 @@ import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP = {".venv", ".git", ".ipynb_checkpoints", "node_modules", "__pycache__"}
+# .tracker is the local, git-ignored cleanup tracker
+SKIP = {".venv", ".git", ".ipynb_checkpoints", "node_modules", "__pycache__", ".tracker"}
 TEXT = {".md", ".py", ".ipynb", ".toml", ".yaml", ".yml", ".txt", ".json", ".cfg", ".ini"}
 MD_LINK = re.compile(r"!?\[[^\]]*\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)")
 IMG_TAG = re.compile(r"<img[^>]+src=[\"']([^\"']+)[\"']", re.I)
