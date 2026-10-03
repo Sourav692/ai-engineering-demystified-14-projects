@@ -205,3 +205,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# research/trials.ipynb creates these next to the notebook
+research/test_repo/
+research/db/

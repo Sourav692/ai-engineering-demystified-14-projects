@@ -8,7 +8,7 @@ Project 02 of **group 02 (retrieval and agent projects)** in *AI Engineering Dem
 
 - **Prerequisites (knowledge):** [repository 04 (LangGraph fundamentals)](https://github.com/Sourav692/ai-engineering-demystified-04-langgraph-fundamentals), [repository 05 (retrieval and RAG)](https://github.com/Sourav692/ai-engineering-demystified-05-retrieval-rag), [repository 08 (advanced agent systems)](https://github.com/Sourav692/ai-engineering-demystified-08-advanced-agent-systems), [repository 09 (advanced RAG)](https://github.com/Sourav692/ai-engineering-demystified-09-advanced-rag).
 - **What it integrates:** seven per-department Chroma vector stores and a LangGraph agentic RAG graph (query categorisation, retrieval, generation, hallucination check) with MemorySaver/SqliteSaver multi-user conversation memory.
-- **External services and expected cost:** whichever provider the bundled `helpers` factory selects — Databricks model serving by default (`DATABRICKS_HOST`/`DATABRICKS_TOKEN`), or OpenAI/Groq; a full run costs cents.
+- **External services and expected cost:** OpenAI `gpt-4o-mini` for the chat model (`OPENAI_API_KEY`, through the course factory `aied_helpers.get_openai_llm`) and Databricks model serving for embeddings (`DATABRICKS_HOST`/`DATABRICKS_TOKEN`, through the bundled `helpers.get_embeddings()`; `provider="openai"` switches it to OpenAI); a full run costs cents.
 - **Tests / offline demo:** no tests; the two notebooks build and query the system (live).
 - **Environment variables:** copy [.env.example](.env.example) to `.env` and fill in what you use; never commit `.env`.
 
@@ -20,4 +20,4 @@ cp .env.example .env
 uv run jupyter lab     # run 01_create_vector_databases.ipynb, then 02_agentic_rag_system.ipynb
 ```
 
-The notebooks import `helpers.utils` (the course's LLM/embedding factory); a copy ships in `helpers/` beside them. `pyproject.toml` declares what the notebooks and `helpers` import; `uv.lock` pins it (`requirements.txt` is an export of the lock). [WALKTHROUGH.md](WALKTHROUGH.md) explains every node.
+The notebooks import `helpers.utils` for embeddings (`get_embeddings()`; it also keeps a multi-provider `get_llm()`); a copy ships in `helpers/` beside them. The chat model comes from `aied_helpers.get_openai_llm(model="gpt-4o-mini")`. `02_agentic_rag_system.ipynb` builds any department store that is missing, so it also runs without notebook 01. `pyproject.toml` declares what the notebooks and `helpers` import; `uv.lock` pins it (`requirements.txt` is an export of the lock). [WALKTHROUGH.md](WALKTHROUGH.md) explains every node.

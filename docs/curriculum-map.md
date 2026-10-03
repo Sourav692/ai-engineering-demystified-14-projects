@@ -67,29 +67,29 @@ runs the repository-wide structural checks. No tests were added during the migra
 - **Objective:** Build a multi-department, multi-user agentic RAG assistant with LangGraph, Chroma and conversation memory.
 - **Tests / deterministic demo:** none — no tests; the two notebooks build and query the system (live).
 - **Notebooks:**
-  - [`01_create_vector_databases.ipynb`](../projects/02_retrieval_agent_projects/02_shopunow_agentic_rag/01_create_vector_databases.ipynb) — ShopUNow — Create Department Vector Databases
-  - [`02_agentic_rag_system.ipynb`](../projects/02_retrieval_agent_projects/02_shopunow_agentic_rag/02_agentic_rag_system.ipynb) — ShopUNow — Multi-User Conversational Agentic RAG System (LangGraph)
+  - [`01_create_vector_databases.ipynb`](../projects/02_retrieval_agent_projects/02_shopunow_agentic_rag/01_create_vector_databases.ipynb) — 🗄️ ShopUNow — Create Department Vector Databases
+  - [`02_agentic_rag_system.ipynb`](../projects/02_retrieval_agent_projects/02_shopunow_agentic_rag/02_agentic_rag_system.ipynb) — 🛍️ ShopUNow — Multi-User Conversational Agentic RAG System (LangGraph)
 
 ### 03 · [End-to-End Medical Chatbot](../projects/02_retrieval_agent_projects/03_end_to_end_medical_chatbot/)
 
 - **Objective:** Ship a Pinecone-backed medical RAG chatbot with Flask, Docker and CI/CD.
 - **Tests / deterministic demo:** none — no tests; `research/demo.ipynb` is the exploratory build (live).
 - **Notebooks:**
-  - [`research/demo.ipynb`](../projects/02_retrieval_agent_projects/03_end_to_end_medical_chatbot/research/demo.ipynb) — Demo
+  - [`research/demo.ipynb`](../projects/02_retrieval_agent_projects/03_end_to_end_medical_chatbot/research/demo.ipynb) — 🩺 Medical RAG Chatbot — Build the Retrieval Pipeline
 
 ### 04 · [Realtime Source Code Analyzer](../projects/02_retrieval_agent_projects/04_realtime_source_code_analyzer/)
 
 - **Objective:** Chat with a GitHub repository through conversational retrieval over its source code.
 - **Tests / deterministic demo:** none — no tests; `research/trials.ipynb` is the exploratory build (live).
 - **Notebooks:**
-  - [`research/trials.ipynb`](../projects/02_retrieval_agent_projects/04_realtime_source_code_analyzer/research/trials.ipynb) — Trials
+  - [`research/trials.ipynb`](../projects/02_retrieval_agent_projects/04_realtime_source_code_analyzer/research/trials.ipynb) — 🔎 Chat with a GitHub Repository: Code-Aware RAG
 
 ### 05 · [AI-Powered Customer Support Copilot](../projects/02_retrieval_agent_projects/05_ai_powered_customer_support/)
 
 - **Objective:** Build a support-agent copilot with RAG, Mem0 memory, SQLite tickets, FastAPI, Streamlit and Docker.
 - **Tests / deterministic demo:** **yes** — `tests/test_simple.py` — one offline FastAPI health-check test (no keys).
 - **Notebooks:**
-  - [`notebooks/experiments.ipynb`](../projects/02_retrieval_agent_projects/05_ai_powered_customer_support/notebooks/experiments.ipynb) — Experiments
+  - [`notebooks/experiments.ipynb`](../projects/02_retrieval_agent_projects/05_ai_powered_customer_support/notebooks/experiments.ipynb) — 🧠 Experiments: Mem0 Customer Memory and a LangChain Tool Agent
 
 ### 06 · [LangGraph Full-Stack Capstone](../projects/02_retrieval_agent_projects/06_langgraph_fullstack_capstone/)
 
