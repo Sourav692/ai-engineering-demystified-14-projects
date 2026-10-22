@@ -16,6 +16,7 @@ Checks:
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import urllib.parse
@@ -37,10 +38,19 @@ failures: list[str] = []
 
 
 def files() -> list[Path]:
-    return sorted(
-        p for p in ROOT.rglob("*")
-        if p.is_file() and p.suffix in TEXT and not SKIP.intersection(p.relative_to(ROOT).parts)
-    )
+    paths = []
+    for directory, dirs, names in os.walk(ROOT):
+        # Virtual environments can have arbitrary names (for example, clothenv).
+        # Prune them before visiting installed third-party packages.
+        if "pyvenv.cfg" in names:
+            dirs[:] = []
+            continue
+        dirs[:] = [name for name in dirs if name not in SKIP]
+        paths.extend(
+            p for name in names
+            if (p := Path(directory) / name).suffix in TEXT and p.is_file()
+        )
+    return sorted(paths)
 
 
 def markdown_of(p: Path) -> str:

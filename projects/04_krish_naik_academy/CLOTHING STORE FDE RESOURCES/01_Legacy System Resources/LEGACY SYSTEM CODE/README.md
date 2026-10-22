@@ -5,17 +5,17 @@ add to a cart, and check out with just an email.
 
 > **Branch 1 of 3.** This is the LUXE store on its own — no AI. It's the
 > starting point of a Forward-Deployed-AI-Engineer story: see the
-> [`main`](../../03_FINAL%20INTEGRATION) branch, here the `03_FINAL INTEGRATION` folder, for the full picture (`docs/STORY.md` there),
-> and [`02-chatbot-poc`](../../02_POC%20Development%20CODE) (the `02_POC Development CODE` folder) for the assistant POC.
+> [`main`](<../../03_FINAL%20INTEGRATION>) branch, here the `03_FINAL INTEGRATION` folder, for the full picture (`docs/STORY.md` there),
+> and [`02-chatbot-poc`](<../../02_POC%20Development%20CODE>) (the `02_POC Development CODE` folder) for the assistant POC.
 
 ## Stack
 
-| | |
-|---|---|
-| **Storefront** | Plain JavaScript + CSS — served as-is, no build step |
-| **Backend** | FastAPI (Python) |
-| **Database** | MongoDB Atlas |
-| **Hosting** | Google Cloud Run (single container), deployed by Google Cloud Build |
+|                      |                                                                     |
+| -------------------- | ------------------------------------------------------------------- |
+| **Storefront** | Plain JavaScript + CSS — served as-is, no build step               |
+| **Backend**    | FastAPI (Python)                                                    |
+| **Database**   | MongoDB Atlas                                                       |
+| **Hosting**    | Google Cloud Run (single container), deployed by Google Cloud Build |
 
 ## Features
 
@@ -42,8 +42,8 @@ uv pip install -r requirements.txt     # (or: pip install -r requirements.txt)
 python main.py
 ```
 
-Open <http://localhost:8000>. The interactive API reference is at
-<http://localhost:8000/docs>.
+Open [http://localhost:8000](http://localhost:8000). The interactive API reference is at
+[http://localhost:8000/docs](http://localhost:8000/docs).
 
 ## Documentation
 
