@@ -42,7 +42,8 @@ def files() -> list[Path]:
     for directory, dirs, names in os.walk(ROOT):
         # Virtual environments can have arbitrary names (for example, clothenv).
         # Prune them before visiting installed third-party packages.
-        if "pyvenv.cfg" in names:
+        # A nested clone (its own .git) is a separate repository, not content here.
+        if "pyvenv.cfg" in names or (".git" in dirs + names and Path(directory) != ROOT):
             dirs[:] = []
             continue
         dirs[:] = [name for name in dirs if name not in SKIP]

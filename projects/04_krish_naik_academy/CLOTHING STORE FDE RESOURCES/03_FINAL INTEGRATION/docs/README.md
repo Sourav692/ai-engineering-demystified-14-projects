@@ -20,6 +20,7 @@ are new:
 | 6 | [AI Assistant](06-ai-assistant.md) | The shopping chatbot: how it turns a sentence into a database query, and the safety guardrails around it |
 | 7 | [Deployment](07-deployment.md) | Google Cloud: every GCP service used, the container images, and the automated deploy pipeline |
 | 8 | [Glossary](08-glossary.md) | Every technical term used in these docs, in one sentence each |
+| 9 | [Production Roadmap](09-production-roadmap.md) | What is still missing for a real production launch, ranked P0–P2 with a phased plan |
 
 ## The one-paragraph version
 

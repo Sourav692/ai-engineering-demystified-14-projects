@@ -31,3 +31,8 @@ runs/
 .DS_Store
 .idea/
 .vscode/
+
+# Local clones of upstream repos (linked from GITHUB/Github Link.txt, not vendored)
+projects/04_krish_naik_academy/Project Materials FDE Retail ECommerce/Retail-FDE-Project-/
+# Excalidraw boards embed PNG screenshots (50-100+ MB each, over GitHub's 100 MB limit)
+projects/04_krish_naik_academy/Project Materials FDE Retail ECommerce/Exclaidraw/
