@@ -18,7 +18,7 @@ from pydantic_ai.providers.openai import OpenAIProvider
 from ..config import REFUSAL_MESSAGE, settings
 from ..database import products_collection # agent shouldonly products 
 from ..utils.images import resolve_image_field
-from ..utils.mongo import case_insensitive_contains, case_insensitive_exact, price_range_filter
+from ..utils.mongo import case_insensitive_exact, keyword_contains, price_range_filter
 from ..utils.llm_gateway import (
     PORTKEY_API_KEY,
     PORTKEY_BASE_URL,
@@ -112,7 +112,7 @@ def search_products(
         query["category"] = case_insensitive_exact(category.strip())
 
     if keyword:
-        query["name"] = case_insensitive_contains(keyword.strip())
+        query["name"] = keyword_contains(keyword.strip())
 
     price_filter = price_range_filter(min_price, max_price)
     if price_filter:

@@ -14,7 +14,7 @@ from .guardrails import (
 _EMPTY_MESSAGE_REPLY = {"type": "text", "message": "Please type a message!", "data": None}
 
 
-logfire.configure()
+logfire.configure(send_to_logfire="if-token-present")
 logfire.instrument_pydantic_ai()
 
 def _blocked() -> dict:
